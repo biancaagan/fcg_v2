@@ -15,6 +15,12 @@
 }
 
 @font-face { 
+    font-family: Futura-Medium;
+    src: url('/Site Files/Fonts/Futura-Medium.woff') format("WOFF");
+    font-weight: normal;
+}
+
+@font-face { 
     font-family: Consolas;
     src: url('/Site Files/Fonts/Consolas.woff') format("WOFF");
     font-weight: normal;
@@ -195,6 +201,13 @@ img.company-logo {
 
 
 /* -------------------- PAGE DEFAULT -------------------- */
+.page-section {
+    /* border-style: dotted; */
+    text-align: center;
+    width: fit-content;
+    /* margin: 20px auto 10px auto; */
+}
+
 .page-header{
     /* border-style: dotted; */
     /* border-radius: 20px; */
@@ -213,14 +226,35 @@ img.company-logo {
     padding: 20px;
 }
 
-.page-subtitle {
+.page-subtitle-green {
     /* border-style: dotted; */
     width: fit-content;
     margin: 10px auto auto auto;
     padding: 20px;
-    font-family: Futura-Book;
-    color: #81BB4E;
+    font-family: Futura-Medium;
+    color: var(--fcg-green);
     font-size: 2vw;
+}
+
+.page-subtitle-black {
+    /* border-style: dotted; */
+    width: fit-content;
+    margin: 10px auto auto auto;
+    padding: 20px;
+    font-family: Futura-Medium;
+    color: ##000000;
+    font-size: 2vw;
+}
+
+.page-text {
+    /* border-style: dotted; */
+    /* font-family: Georgia, 'Times New Roman', Times, serif; */
+    width: 65vw;
+    margin: 10px auto auto auto;
+    padding: 20px;
+    font-family: Consolas;
+    font-size: 1.5vw;
+    word-wrap: break-word;
 }
 
 .page-desc {
@@ -234,6 +268,48 @@ img.company-logo {
     word-wrap: break-word;
 }
 
+hr.dashed-line {
+    border: none;
+    border-top: 2px dashed #000;
+}
+
+/* -------------------- MEET THE TEAM -------------------- */
+.team-container {
+    /* border-style: dotted; */
+    width: 80%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; 
+    margin: 2vw auto 2vw auto;
+    gap: 20px; 
+}
+
+.team-container-item {
+    border-style: dashed;
+    border-width: 2px;
+    background-color: #f0f0f0; 
+    padding: 0.2vw;             
+    /* border: 1px solid #ccc;     */
+    text-align: center;        
+}
+
+.team-container-image {
+  /* border-style: dashed;
+  border-width: 2px; */
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  margin: 4vw auto 2vw auto;
+}
+
+.team-container-text {
+    /* border-style: dotted; */
+    /* font-family: Georgia, 'Times New Roman', Times, serif; */
+    margin: 10px auto auto auto;
+    padding: 20px;
+    font-family: Consolas;
+    font-size: 1.5vw;
+    word-wrap: break-word;
+}
 
 /* -------------------- CONTACT -------------------- */
 .contact-button {
@@ -247,7 +323,7 @@ img.company-logo {
     font-family: Futura-Book;
     font-size: 2vw;
     cursor: pointer;
-    margin: 35px auto 100px auto;
+    margin: 2vw auto 2vw auto;
 }
 
 .contact-button:hover {
@@ -286,7 +362,30 @@ img.show-logo {
     width: 25vw;
 }
 
-/* -------------------- INVENTORY -------------------- */
+/* -------------------- RENTALS / INVENTORY -------------------- */
+.rentals-button {
+    background-color: var(--fcg-green);
+    border: 0.25vw solid black;
+    border-radius: 2vw;
+    color: black;
+    padding: 0.8vw 1vw 0.5vw 1vw;
+    text-align: center;
+    text-decoration: none;
+    font-family: Futura-Book;
+    font-size: 2vw;
+    cursor: pointer;
+    margin: 35px auto 100px auto;
+}
+
+.rentals-button:hover {
+    box-shadow: 0 5px 16px 0 rgba(173, 173, 173, 0.24),0 17px 25px 0 rgba(173, 173, 173, 0.24);
+    transition: all 0.3s ease 0s;
+    border: 0.25vw solid #81BB4E;
+    border-radius: 2vw;
+    background-color: #81BB4E;
+    color: white;
+}
+
 .inventory-wrapper {
     /* Centers the entire grid container on the page */
     max-width: 940px; /* Set a max-width for the grid */
