@@ -510,23 +510,41 @@ footer {
         width: 175px;
     }
 
-    #page-title {
+    .page-title {
         font-size: 10vw;
     }
 
-    #page-subtitle {
-        font-size: 8vw;
+    .page-subtitle {
+        font-size: 6vw;
         text-align: center;
         inline-size: 300px;
         text-wrap: break-word;
     }
 
-    #page-desc {
+    .page-subtitle-black {
+        font-size: 6vw;
+        text-align: center;
+        inline-size: 300px;
+        text-wrap: break-word;
+    }
+
+    .page-subtitle-green {
+        font-size: 6vw;
+        text-align: center;
+        inline-size: 300px;
+        text-wrap: break-word;
+    }
+
+    .page-desc {
         width: 80vw;
         font-size: 4vw;
     }
 
     .contact-button {
+        font-size: 4vw;
+    }
+
+    .rentals-button {
         font-size: 4vw;
     }
 
