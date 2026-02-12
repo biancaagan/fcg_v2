@@ -535,6 +535,11 @@ footer {
         text-wrap: break-word;
     }
 
+    .page-text {
+        width: 80vw;
+        font-size: 4vw;
+    }
+
     .page-desc {
         width: 80vw;
         font-size: 4vw;
