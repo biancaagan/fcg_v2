@@ -235,7 +235,7 @@ img.company-logo {
 }
 
 
-/* -------------------- CONTACT BUTTON -------------------- */
+/* -------------------- CONTACT -------------------- */
 .contact-button {
     background-color: var(--fcg-green);
     border: 0.25vw solid black;
@@ -257,6 +257,18 @@ img.company-logo {
     border-radius: 2vw;
     background-color: #81BB4E;
     color: white;
+}
+
+.contact-container {
+    margin: auto;
+    width: 50%;
+    border: 0.25vw solid #81BB4E;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+    font-family: Futura-Book;
+    /* font-size: 24px; */
 }
 
 /* -------------------- LOGO CONTAINER - COORDINATION REQUESTS -------------------- */
