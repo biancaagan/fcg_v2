@@ -279,7 +279,7 @@ hr.dashed-line {
     width: 80%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr; 
-    margin: 2vw auto 2vw auto;
+    margin: 2vw auto 14vw auto;
     gap: 20px; 
 }
 
@@ -311,8 +311,14 @@ hr.dashed-line {
     word-wrap: break-word;
 }
 
+/* -------------------- RF FORM -------------------- */
+
+
+
+
 /* -------------------- CONTACT -------------------- */
 .contact-button {
+
     background-color: var(--fcg-green);
     border: 0.25vw solid black;
     border-radius: 2vw;
@@ -323,7 +329,7 @@ hr.dashed-line {
     font-family: Futura-Book;
     font-size: 2vw;
     cursor: pointer;
-    margin: 2vw auto 2vw auto;
+    margin: 2vw auto 6vw auto;
 }
 
 .contact-button:hover {
@@ -545,11 +551,19 @@ footer {
         font-size: 4vw;
     }
 
+    .submit-button {
+        font-size: 4vw;
+    }
+
     .contact-button {
+        border: 0.5vw solid black;
+        border-radius: 4vw;
         font-size: 4vw;
     }
 
     .rentals-button {
+        border: 0.5vw solid black;
+        border-radius: 4vw;
         font-size: 4vw;
     }
 
