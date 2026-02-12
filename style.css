@@ -588,6 +588,11 @@ footer {
         font-size: 4vw;
     }
 
+    .contact-container {
+        border: 0.4vw solid #81BB4E;
+        width: 80vw;
+    }
+
     .rentals-button {
         border: 0.5vw solid black;
         border-radius: 4vw;
