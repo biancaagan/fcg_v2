@@ -2,25 +2,26 @@
     --fcg-green: #81bb4e;
 }
 
-@font-face { /* https://github.com/garrettboatman/ForTheWolf/blob/master/fonts/Futura-Medium.woff */
+@font-face {
+    /* https://github.com/garrettboatman/ForTheWolf/blob/master/fonts/Futura-Medium.woff */
     font-family: Futura;
     src: url('/Site Files/Fonts/Futura-Medium.woff') format("WOFF");
     font-weight: normal;
 }
-  
-@font-face { 
+
+@font-face {
     font-family: Futura-Book;
     src: url('/Site Files/Fonts/Futura-Book.woff') format("WOFF");
     font-weight: normal;
 }
 
-@font-face { 
+@font-face {
     font-family: Futura-Medium;
     src: url('/Site Files/Fonts/Futura-Medium.woff') format("WOFF");
     font-weight: normal;
 }
 
-@font-face { 
+@font-face {
     font-family: Consolas;
     src: url('/Site Files/Fonts/Consolas.woff') format("WOFF");
     font-weight: normal;
@@ -114,13 +115,14 @@ img.company-logo {
     /* border-style: dotted; */
     background-color: #dbdbdb;
     padding: 0 0;
-    position: absolute;     /* with respect to parent */
+    position: absolute;
+    /* with respect to parent */
     display: none;
     border-radius: 8px;
     top: 35px;
 }
 
-.dropdown li a + li {
+.dropdown li a+li {
     /* border-style: dotted; */
     margin-top: 0px;
 }
@@ -145,7 +147,8 @@ img.company-logo {
 }
 
 /* -------------------- RESPONSIVE NAVBAR -------------------- */
-.hack { /* input */
+.hack {
+    /* input */
     display: none
 }
 
@@ -180,7 +183,7 @@ img.company-logo {
         transition: 0.3s ease;
     }
 
-    .hack:checked ~ .menu {
+    .hack:checked~.menu {
         display: block;
     }
 
@@ -208,7 +211,7 @@ img.company-logo {
     /* margin: 20px auto 10px auto; */
 }
 
-.page-header{
+.page-header {
     /* border-style: dotted; */
     /* border-radius: 20px; */
     text-align: center;
@@ -278,27 +281,27 @@ hr.dashed-line {
     /* border-style: dotted; */
     width: 80%;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr; 
+    grid-template-columns: 1fr 1fr 1fr;
     margin: 2vw auto 14vw auto;
-    gap: 20px; 
+    gap: 20px;
 }
 
 .team-container-item {
     border-style: dashed;
     border-width: 2px;
-    background-color: #f0f0f0; 
-    padding: 0.2vw;             
+    background-color: #f0f0f0;
+    padding: 0.2vw;
     /* border: 1px solid #ccc;     */
-    text-align: center;        
+    text-align: center;
 }
 
 .team-container-image {
-  /* border-style: dashed;
+    /* border-style: dashed;
   border-width: 2px; */
-  width: 70%;
-  display: flex;
-  justify-content: center;
-  margin: 4vw auto 2vw auto;
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    margin: 4vw auto 2vw auto;
 }
 
 .team-container-text {
@@ -333,7 +336,7 @@ hr.dashed-line {
 }
 
 .contact-button:hover {
-    box-shadow: 0 5px 16px 0 rgba(173, 173, 173, 0.24),0 17px 25px 0 rgba(173, 173, 173, 0.24);
+    box-shadow: 0 5px 16px 0 rgba(173, 173, 173, 0.24), 0 17px 25px 0 rgba(173, 173, 173, 0.24);
     transition: all 0.3s ease 0s;
     border: 0.25vw solid #81BB4E;
     border-radius: 2vw;
@@ -357,7 +360,7 @@ hr.dashed-line {
 .logo-container {
     border-style: dotted;
     border-radius: 2vw;
-    width: 200vw;
+    /* width: 100vw; */
     text-align: center;
     width: fit-content;
     margin: 1vw auto 0.5vw auto;
@@ -365,7 +368,7 @@ hr.dashed-line {
 }
 
 img.show-logo {
-    width: 25vw;
+    width: 60vw;
 }
 
 /* -------------------- RENTALS / INVENTORY -------------------- */
@@ -384,7 +387,7 @@ img.show-logo {
 }
 
 .rentals-button:hover {
-    box-shadow: 0 5px 16px 0 rgba(173, 173, 173, 0.24),0 17px 25px 0 rgba(173, 173, 173, 0.24);
+    box-shadow: 0 5px 16px 0 rgba(173, 173, 173, 0.24), 0 17px 25px 0 rgba(173, 173, 173, 0.24);
     transition: all 0.3s ease 0s;
     border: 0.25vw solid #81BB4E;
     border-radius: 2vw;
@@ -394,15 +397,17 @@ img.show-logo {
 
 .inventory-wrapper {
     /* Centers the entire grid container on the page */
-    max-width: 940px; /* Set a max-width for the grid */
-    margin: 0 auto;   /* Centers the block horizontally */
+    max-width: 940px;
+    /* Set a max-width for the grid */
+    margin: 0 auto;
+    /* Centers the block horizontally */
     padding: 1rem;
 }
 
 .inventory-container {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); 
-    gap: 20px; 
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
 }
 
 .main-item {
@@ -417,7 +422,7 @@ img.show-logo {
     font-family: Consolas;
     font-weight: bolder;
     font-size: 1.4vw;
-    
+
 }
 
 /* .item, .item-details {
@@ -439,31 +444,38 @@ img.show-logo {
     justify-content: center;
     text-align: center;
     font-family: Consolas;
-    font-size: 1.2vw; 
+    font-size: 1.2vw;
 }
 
 .item-popup {
-  visibility: hidden; /* Hides the pop-up by default */
-  width: 220px;
-  background-color: black;
-  color: #fff;
-  text-align: center;
-  border-radius: 6px;
-  padding: 5px 0;
-  position: absolute; /* Positions the pop-up over other content */
-  z-index: 1; /* Ensures the pop-up appears on top */
-  bottom: 20%; /* Positions the pop-up above the hovered text */
-  left: 50%;
-  margin-left: -60px; /* Centers the pop-up (half of its width) */
-  /* Optional: Add smooth transition effect using opacity */
-  opacity: 0;
-  transition: opacity 0.3s;
+    visibility: hidden;
+    /* Hides the pop-up by default */
+    width: 220px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    /* Positions the pop-up over other content */
+    z-index: 1;
+    /* Ensures the pop-up appears on top */
+    bottom: 20%;
+    /* Positions the pop-up above the hovered text */
+    left: 50%;
+    margin-left: -60px;
+    /* Centers the pop-up (half of its width) */
+    /* Optional: Add smooth transition effect using opacity */
+    opacity: 0;
+    transition: opacity 0.3s;
 }
 
 /* Show the pop-up when hovering over the parent container */
 .item:hover .item-popup {
-  visibility: visible; /* Makes the pop-up visible */
-  opacity: 1; /* Makes the pop-up fully opaque (for the fade effect) */
+    visibility: visible;
+    /* Makes the pop-up visible */
+    opacity: 1;
+    /* Makes the pop-up fully opaque (for the fade effect) */
 }
 
 
@@ -517,7 +529,8 @@ footer {
     }
 
     .page-title {
-        font-size: 10vw;
+        font-size: 6vw;
+        text-align: center;
     }
 
     .page-subtitle {
@@ -551,6 +564,20 @@ footer {
         font-size: 4vw;
     }
 
+    .logo-container {
+        border-style: dotted;
+        border-radius: 2vw;
+        width: 40vw;
+        text-align: center;
+        width: fit-content;
+        margin: 1vw auto 0.5vw auto;
+        padding: 2vw;
+    }
+
+    img.show-logo {
+        width: 80vw;
+    }
+
     .submit-button {
         font-size: 4vw;
     }
@@ -572,6 +599,7 @@ footer {
         /* margin-top: 2vw; */
     }
 }
+
 /* -------------------------------------------------------------------------------------------- */
 
 
