@@ -1,0 +1,95 @@
+1. New google spreadsheet
+
+2. Exentions > App Script
+
+3. Rename project to: [SHOW] [YEAR] - RF Form
+
+4. Delete " function myFunction() {} " block within the " Code.gs " tab
+
+5. Paste the following code and save (command+s)
+
+
+// Original code from https://github.com/jamiewilson/form-to-google-sheets
+// Updated for 2021 and ES6 standards
+
+const sheetName = 'Sheet1'
+const scriptProp = PropertiesService.getScriptProperties()
+
+function initialSetup () {
+  const activeSpreadsheet = SpreadsheetApp.getActiveSpreadsheet()
+  scriptProp.setProperty('key', activeSpreadsheet.getId())
+}
+
+function doPost (e) {
+  const lock = LockService.getScriptLock()
+  lock.tryLock(10000)
+
+  try {
+    const doc = SpreadsheetApp.openById(scriptProp.getProperty('key'))
+    const sheet = doc.getSheetByName(sheetName)
+
+    const headers = sheet.getRange(1, 1, 1, sheet.getLastColumn()).getValues()[0]
+    const nextRow = sheet.getLastRow() + 1
+
+    const newRow = headers.map(function(header) {
+      var timeZone = Session.getScriptTimeZone();
+      var date = Utilities.formatDate(new Date(), timeZone, "MM-dd-yyyy | HH:mm:ss");
+      return header === 'Date Submitted' ? date : e.parameter[header]
+    })
+
+    sheet.getRange(nextRow, 1, 1, newRow.length).setValues([newRow])
+
+    return ContentService
+      .createTextOutput(JSON.stringify({ 'result': 'success', 'row': nextRow }))
+      .setMimeType(ContentService.MimeType.JSON)
+  }
+
+  catch (e) {
+    return ContentService
+      .createTextOutput(JSON.stringify({ 'result': 'error', 'error': e }))
+      .setMimeType(ContentService.MimeType.JSON)
+  }
+
+  finally {
+    lock.releaseLock()
+  }
+}
+
+
+6. Make sure " initialSetup " is selected and click "Run"
+
+7. Review permissions, click Google account, blah blah blah
+
+8. In the left panel, click the symbol that looks like a clock (Triggers)
+
+9. Click " + Add Trigger "
+
+10. " Choose which function to run " --> doPost
+
+    **" Choose which deployment should run " --> Head
+
+11. " Select event source " --> From Spreadsheet
+
+12. " Select event type " --> On Form Submit
+
+13. Click SAVE. Do the same review permissions thing
+
+14. Click the " Deploy " > " New Deployment "
+
+15. Select type --> Web App
+
+16. Description --> RF Requests for [SHOW] [YEAR]
+
+17. Execute as --> Me(my email address)
+
+18. Who has access --> Anyone
+
+19. Click Deploy
+
+20. Copy Web App URL
+
+21. In the rf-form.html, edit the <form> element to:
+
+<form class="rf-form" method="POST" action="https://script.google.com/macros/s/AKfycbwJNEfR3W4LiK6ygRzUJhkDsEXJ_YIxxZDGn7qkbEVeEHLeISzPokptnQYWdK19VFjK/exec">
+
+22. Add in the URL to the action section
