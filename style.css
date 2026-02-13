@@ -576,6 +576,10 @@ footer {
         font-size: 4vw;
     }
 
+    .team-container-text {
+        font-size: 3vw;
+    }
+
     .logo-container {
         border-style: dotted;
         border-radius: 2vw;
