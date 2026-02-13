@@ -291,13 +291,15 @@ hr.dashed-line {
     border-width: 2px;
     background-color: #f0f0f0;
     padding: 0.2vw;
+    /* width: 70%; */
     /* border: 1px solid #ccc;     */
     text-align: center;
 }
 
 .team-container-image {
     /* border-style: dashed;
-  border-width: 2px; */
+    border-width: 2px; */
+    /* height: 4%; */
     width: 70%;
     display: flex;
     justify-content: center;
@@ -305,12 +307,27 @@ hr.dashed-line {
 }
 
 .team-container-text {
+    bottom: 0;
+    padding: 10px 0 10px 0;
+    margin-bottom: 20px;
+    bottom: 0;
+}
+
+.team-container-title {
     /* border-style: dotted; */
-    /* font-family: Georgia, 'Times New Roman', Times, serif; */
-    margin: 10px auto auto auto;
-    padding: 20px;
-    font-family: Consolas;
+    margin: 0 auto 0 auto;
+    padding: 0.2vw;
+    font-family: Futura-Medium;
     font-size: 1.5vw;
+    word-wrap: break-word;
+}
+
+.team-container-desc {
+    /* border-style: dotted; */
+    margin: 0 auto 0 auto;
+    padding: 0.2vw;
+    font-family: Consolas;
+    font-size: 1.2vw;
     word-wrap: break-word;
 }
 
@@ -574,6 +591,10 @@ footer {
     .page-desc {
         width: 80vw;
         font-size: 4vw;
+    }
+
+    .team-container-title {
+        font-size: 3vw;
     }
 
     .team-container-text {
