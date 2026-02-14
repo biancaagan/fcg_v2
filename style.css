@@ -343,7 +343,6 @@ hr.dashed-line {
 
 /* -------------------- CONTACT -------------------- */
 .contact-button {
-
     background-color: var(--fcg-green);
     border: 0.25vw solid black;
     border-radius: 2vw;
@@ -405,7 +404,7 @@ img.show-logo {
     font-family: Futura-Book;
     font-size: 2vw;
     cursor: pointer;
-    margin: 35px auto 100px auto;
+    margin: 2vw auto 2vw auto;
 }
 
 .rentals-button:hover {
