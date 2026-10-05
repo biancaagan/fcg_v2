@@ -4,20 +4,18 @@
 
 /services   /03_Services/services.html 200!
 
-/rentals   /03_Services/Rentals/rentals.html 200!
+/rentals /03_Services/rentals.html     200!
 
-/contact    /04_Contact/contact.html   200!
-
-/contact-submit     /Contact/contact-landing-page.html  200!
-
-/rentals /Services/rentals.html     200!
+/contact    /04_Contact/contact-form.html   200!
+/contact-submit     /04_Contact/contact-submission-landing-page.html  200!
 
 
 
 
 
-/okeechobee26  /02_Coordination Requests/Example Form/example-form.html     200!
 
-/okeechobee26-submit  /rf-request-landing-page.html        200!
+
+/okeechobee-26  /02_Coordination-Requests/Example-Form/example-form.html     200!
+/okeechobee-26-submit  /rf-request-landing-page.html        200!
 
 
