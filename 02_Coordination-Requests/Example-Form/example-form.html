@@ -16,44 +16,44 @@
 
 	<!-- ----------------------- TOP BAR / NAVIGATION ----------------------- -->
 	<nav class="navbar">
-        <!-- LOGO -->
-        <div class="logo">
-            <a href="/">
-                <img class="company-logo" src="/Site Files/Media/FCG Logo 1.png">
-            </a>
-        </div>
-        <!-- NAVIGATION MENU -->
-        <ul class="nav-links">
+		<!-- LOGO -->
+		<div class="logo">
+			<a href="/">
+				<img class="company-logo" src="/Site Files/Media/FCG Logo 1.png">
+			</a>
+		</div>
+		<!-- NAVIGATION MENU -->
+		<ul class="nav-links">
 
-            <!-- USING CHECKBOX HACK -->
-            <input type="checkbox" class="hack" id="checkbox_toggle" />
-            <label for="checkbox_toggle" class="hamburger">&#9776;</label>
+			<!-- USING CHECKBOX HACK -->
+			<input type="checkbox" class="hack" id="checkbox_toggle" />
+			<label for="checkbox_toggle" class="hamburger">&#9776;</label>
 
-            <!-- NAVIGATION MENUS -->
-            <div class="menu">
+			<!-- NAVIGATION MENUS -->
+			<div class="menu">
 
-                <li><a href="/">Home</a></li>
-                <li><a href="https://freqcoordgroup.com/about">About</a></li>
+				<li><a href="/">Home</a></li>
+				<li><a href="https://freqcoordgroup.com/about">About</a></li>
 
-                <div class="dropdown-menu">
-                    <li class="rf-requests">
-                        <a href="https://freqcoordgroup.com/coordination-requests">Coordination Requests</a>
-                        <i class="fa fa-caret-down"></i>
-                        <!-- DROPDOWN MENU -->
-                        <ul class="dropdown">
-                            <li><a href="https://freqcoordgroup.com/okeechobee-2026">Okeechobee Music Fest</a></li>
+				<div class="dropdown-menu">
+					<li class="rf-requests">
+						<a href="https://freqcoordgroup.com/coordination-requests">Coordination Requests</a>
+						<i class="fa fa-caret-down"></i>
+						<!-- DROPDOWN MENU -->
+						<ul class="dropdown">
+							<li><a href="https://freqcoordgroup.com/okeechobee-2026">Okeechobee Music Fest</a></li>
 							<li><a href="https://freqcoordgroup.com/head-trip-2026">Head Trip</a></li>
 						</ul>
-                    </li>
-                </div>
+					</li>
+				</div>
 
-                <li><a href="https://freqcoordgroup.com/services">Services</a></li>
-                <li><a href="https://freqcoordgroup.com/contact">Contact</a></li>
+				<li><a href="https://freqcoordgroup.com/services">Services</a></li>
+				<li><a href="https://freqcoordgroup.com/contact">Contact</a></li>
 
-            </li>
-            </div>
-        </ul>
-    </nav>
+				</li>
+			</div>
+		</ul>
+	</nav>
 	<!-- ----------------------- ----------------------- ----------------------- -->
 
 
@@ -109,7 +109,7 @@
 							requested less than 48 hours before
 							load in or show day, WMAS frequencies are not guaranteed.
 							<br><br>
-							Spectera systems must be submitted at least 48 hours before your 
+							Spectera systems must be submitted at least 48 hours before your
 							scheduled load in, and will be accommodated when possible.
 						</u>
 					</em>
@@ -781,7 +781,8 @@
 									<input type="text" class="vd" placeholder="Range" onchange="updatedVideoDevices()">
 								</td>
 								<td style="width:18%">
-									<input type="text" class="vd" placeholder="Bandwidth" onchange="updatedVideoDevices()">
+									<input type="text" class="vd" placeholder="Bandwidth"
+										onchange="updatedVideoDevices()">
 								</td>
 							</tr>
 
@@ -813,49 +814,51 @@
 
 					</div>
 				</div>
+			</div>
 
-			<!-- -------------------- COMMENT SECTION -------------------- -->
-			<div class="comments-section">
-				<h3 class="form-section-title">Comments</h3>
+				<!-- -------------------- COMMENT SECTION -------------------- -->
+				<div class="comments-section">
+					<h3 class="form-section-title">Comments</h3>
 
-				<div class="form-text">
-					Enter any additional comments or notes:<br>
+					<div class="form-text">
+						Enter any additional comments or notes:<br>
+					</div>
+
+					<br>
+
+					<textarea id="comment-section" name="comment-section" rows="4" cols="50" onchange="updateComments()"
+						placeholder="...?"></textarea>
+
+					<!-- Hidden input value for comment section -->
+					<input name="Comments" id="hidden-comments" type="text" placeholder="Selected Locations" />
+
+					<script>
+						function updateComments() {
+							document.getElementById('hidden-comments').value = document.getElementById("comment-section").value;
+						}
+					</script>
 				</div>
 
-				<br>
+				<div class="submit-warning">
+					<h3>
+						** By submitting this request, you understand and acknowledge any and all statements written in
+						this
+						form.
+					</h3>
+				</div>
 
-				<textarea id="comment-section" name="comment-section" rows="4" cols="50" onchange="updateComments()"
-					placeholder="...?"></textarea>
+				<!-- -------------------- SUBMIT BUTTON -------------------- -->
+				<button type="submit" id="submitButton" class="submit-button center">SUBMIT</button>
+				<!-- <input type="submit" id="submitButton" class="submit-button center"> -->
 
-				<!-- Hidden input value for comment section -->
-				<input name="Comments" id="hidden-comments" type="text" placeholder="Selected Locations" />
-
-				<script>
-					function updateComments() {
-						document.getElementById('hidden-comments').value = document.getElementById("comment-section").value;
-					}
-				</script>
-			</div>
-
-			<div class="submit-warning">
-				<h3>
-					** By submitting this request, you understand and acknowledge any and all statements written in this
-					form.
-				</h3>
-			</div>
-
-			<!-- -------------------- SUBMIT BUTTON -------------------- -->
-			<button type="submit" id="submitButton" class="submit-button center">SUBMIT</button>
-			<!-- <input type="submit" id="submitButton" class="submit-button center"> -->
-
-			<div class="submit-warning">
-				<h3>
-					<u>Warning</u>:<br>
-					There is no way to edit a request.<br>
-					If you need to make changes, please re-submit.<br>
-					Apologies for any inconvenience.
-				</h3>
-			</div>
+				<div class="submit-warning">
+					<h3>
+						<u>Warning</u>:<br>
+						There is no way to edit a request.<br>
+						If you need to make changes, please re-submit.<br>
+						Apologies for any inconvenience.
+					</h3>
+				</div>
 
 		</form>
 
