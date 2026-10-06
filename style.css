@@ -149,11 +149,13 @@ img.company-logo {
     background-color: var(--fcg-green);
 }
 
-.about-dropdown:hover, .rf-requests:hover {
+.rf-requests:hover .dropdown{
     display: block;
-    z-index: 10;
 }
 
+.about-dropdown:hover .dropdown{
+    display: block;
+}
 
 /* .dropdown-menu:hover .dropdown {
     transition-delay: 1s;
