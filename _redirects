@@ -15,7 +15,10 @@
 
 
 
-/okeechobee-26  /02_Coordination-Requests/Example-Form/example-form.html     200!
-/okeechobee-26-submit  /rf-request-landing-page.html        200!
+/okeechobee-2026  /02_Coordination-Requests/Example-Form/example-form.html     200!
+/head-trip-2026     /02_Coordination-Requests/Head-Trip-2026/head-trip-2026.html    200!
+
+
+/rf-request-submit  /rf-request-landing-page.html        200!
 
 

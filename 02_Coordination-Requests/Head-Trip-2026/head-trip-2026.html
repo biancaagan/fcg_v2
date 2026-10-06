@@ -8,7 +8,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="/02_Coordination-Requests/form-style.css" />
-	<script src="/02_Coordination-Requests/Example-Form/example-form.js"></script>
+	<script src="/02_Coordination-Requests/Head-Trip-2026/head-trip-2026.js"></script>
 	<title>FCG</title>
 </head>
 
@@ -16,44 +16,44 @@
 
 	<!-- ----------------------- TOP BAR / NAVIGATION ----------------------- -->
 	<nav class="navbar">
-        <!-- LOGO -->
-        <div class="logo">
-            <a href="/">
-                <img class="company-logo" src="/Site Files/Media/FCG Logo 1.png">
-            </a>
-        </div>
-        <!-- NAVIGATION MENU -->
-        <ul class="nav-links">
+		<!-- LOGO -->
+		<div class="logo">
+			<a href="/">
+				<img class="company-logo" src="/Site Files/Media/FCG Logo 1.png">
+			</a>
+		</div>
+		<!-- NAVIGATION MENU -->
+		<ul class="nav-links">
 
-            <!-- USING CHECKBOX HACK -->
-            <input type="checkbox" class="hack" id="checkbox_toggle" />
-            <label for="checkbox_toggle" class="hamburger">&#9776;</label>
+			<!-- USING CHECKBOX HACK -->
+			<input type="checkbox" class="hack" id="checkbox_toggle" />
+			<label for="checkbox_toggle" class="hamburger">&#9776;</label>
 
-            <!-- NAVIGATION MENUS -->
-            <div class="menu">
+			<!-- NAVIGATION MENUS -->
+			<div class="menu">
 
-                <li><a href="/">Home</a></li>
-                <li><a href="https://freqcoordgroup.com/about">About</a></li>
+				<li><a href="/">Home</a></li>
+				<li><a href="https://freqcoordgroup.com/about">About</a></li>
 
-                <div class="dropdown-menu">
-                    <li class="rf-requests">
-                        <a href="https://freqcoordgroup.com/coordination-requests">Coordination Requests</a>
-                        <i class="fa fa-caret-down"></i>
-                        <!-- DROPDOWN MENU -->
-                        <ul class="dropdown">
+				<div class="dropdown-menu">
+					<li class="rf-requests">
+						<a href="https://freqcoordgroup.com/coordination-requests">Coordination Requests</a>
+						<i class="fa fa-caret-down"></i>
+						<!-- DROPDOWN MENU -->
+						<ul class="dropdown">
                             <li><a href="https://freqcoordgroup.com/okeechobee-2026">Okeechobee Music Fest</a></li>
-							<li><a href="https://freqcoordgroup.com/head-trip-2026">Head Trip</a></li>
-						</ul>
-                    </li>
-                </div>
+                            <li><a href="https://freqcoordgroup.com/head-trip-2026">Head Trip</a></li>
+                        </ul>
+					</li>
+				</div>
 
-                <li><a href="https://freqcoordgroup.com/services">Services</a></li>
-                <li><a href="https://freqcoordgroup.com/contact">Contact</a></li>
+				<li><a href="https://freqcoordgroup.com/services">Services</a></li>
+				<li><a href="https://freqcoordgroup.com/contact">Contact</a></li>
 
-            </li>
-            </div>
-        </ul>
-    </nav>
+				</li>
+			</div>
+		</ul>
+	</nav>
 	<!-- ----------------------- ----------------------- ----------------------- -->
 
 
@@ -88,17 +88,16 @@
 		</script>
 
 
-		<form class="rf-form" id="rf-form" method="POST"
-			action="https://script.google.com/macros/s/AKfycbyNDlGg_Fhspw_S9KRoXV2Cz9-4rM3jdiH5iLw1ZzYZ8FCWw4_-SKbrlZxdPxJXHiM8lg/exec">
+		<form class="rf-form" id="rf-form" method="POST" action="">
 
 
 			<!-- ----------------------- FORM HEADER ----------------------- -->
 			<div class="form-header">
 				<h1 class="form-title">Frequency Coordination Requests</h1><br>
-				<img class="show-logo" src="/02_Coordination-Requests/Example-Form/okeechobee-2026-logo.jpg">
+				<img class="show-logo" src="/02_Coordination-Requests/Head-Trip-2026/head-trip-2026-logo.jpg">
 				<p class="form-description">
 					FCG is proud to provide frequency coordination for<br>the
-					2026 Okeechobee Music Fest.<br>
+					2026 Head Trip Music Festival.<br>
 					Please submit your coordination requests below.<br><br>
 					This can include but is not limited to wireless microphones, backline wireless,
 					IEMs,<br>2-way radios, drones, intercom, wireless cameras, etc.
@@ -109,7 +108,7 @@
 							requested less than 48 hours before
 							load in or show day, WMAS frequencies are not guaranteed.
 							<br><br>
-							Spectera systems must be submitted at least 48 hours before your 
+							Spectera systems must be submitted at least 48 hours before your
 							scheduled load in, and will be accommodated when possible.
 						</u>
 					</em>
@@ -164,25 +163,24 @@
 
 					<!-- Checkboxes -->
 					<div class="checkbox-group">
-						<label class="checkbox-container" for="date-1">March 18 (Early Load-In)
+						<label class="checkbox-container" for="date-1">Thursday, October 8 (early load-in)
 							<input type="checkbox" id="date-1" name="date" onchange="updateDates()"
-								value="March 18 (Early Load-In)">
+								value="Thursday, October 8 (Early Load-In)">
 							<span class="checkmark"></span>
 						</label>
-						<label class="checkbox-container" for="date-2">March 19
-							<input type="checkbox" id="date-2" name="date" onchange="updateDates()" value="March 19">
+						<label class="checkbox-container" for="date-2">Friday, October 9 (early load-in)
+							<input type="checkbox" id="date-2" name="date" onchange="updateDates()"
+								value="Friday, October 9 (Early Load-In)">
 							<span class="checkmark"></span>
 						</label>
-						<label class="checkbox-container" for="date-3">March 20
-							<input type="checkbox" id="date-3" name="date" onchange="updateDates()" value="March 20">
+						<label class="checkbox-container" for="date-3">Saturday, October 10 (show)
+							<input type="checkbox" id="date-3" name="date" onchange="updateDates()"
+								value="Saturday, October 10 (show)">
 							<span class="checkmark"></span>
 						</label>
-						<label class="checkbox-container" for="date-4">March 21
-							<input type="checkbox" id="date-4" name="date" onchange="updateDates()" value="March 21">
-							<span class="checkmark"></span>
-						</label>
-						<label class="checkbox-container" for="date-5">March 22
-							<input type="checkbox" id="date-5" name="date" onchange="updateDates()" value="March 22">
+						<label class="checkbox-container" for="date-4">Sunday, October 11 (show)
+							<input type="checkbox" id="date-4" name="date" onchange="updateDates()"
+								value="Sunday, October 11 (show)">
 							<span class="checkmark"></span>
 						</label>
 					</div>
@@ -215,43 +213,23 @@
 
 					<!-- Checkboxes -->
 					<div class="checkbox-group">
-						<label class="checkbox-container" for="loc-1">BE Stage
+						<label class="checkbox-container" for="loc-1">Main Stage
 							<input type="checkbox" id="loc-1" name="location" onchange="updateLocations()"
-								value="BE Stage">
+								value="Main Stage">
 							<span class="checkmark"></span>
 						</label>
-						<label class="checkbox-container" for="loc-2">HERE Stage
+						<label class="checkbox-container" for="loc-2">Sunflower
 							<input type="checkbox" id="loc-2" name="location" onchange="updateLocations()"
-								value="HERE Stage">
+								value="Sunflower">
 							<span class="checkmark"></span>
 						</label>
-						<label class="checkbox-container" for="loc-3">NOW Stage
+						<label class="checkbox-container" for="loc-3">Broadcast
 							<input type="checkbox" id="loc-3" name="location" onchange="updateLocations()"
-								value="NOW Stage">
+								value="Broadcast">
 							<span class="checkmark"></span>
 						</label>
-						<label class="checkbox-container" for="loc-4">Incendia Stage
+						<label class="checkbox-container" for="loc-4">Media
 							<input type="checkbox" id="loc-4" name="location" onchange="updateLocations()"
-								value="Incendia Stage">
-							<span class="checkmark"></span>
-						</label>
-						<label class="checkbox-container" for="loc-5">Auquachobee Stage
-							<input type="checkbox" id="loc-5" name="location" onchange="updateLocations()"
-								value="Auquachobee Stage">
-							<span class="checkmark"></span>
-						</label>
-						<label class="checkbox-container" for="loc-6">Jungle 51
-							<input type="checkbox" id="loc-6" name="location" onchange="updateLocations()"
-								value="Jungle 51">
-							<span class="checkmark"></span>
-						</label>
-						<label class="checkbox-container" for="loc-7">T-Lounge
-							<input type="checkbox" id="loc-7" name="location" onchange="updateLocations()"
-								value="T-Lounge">
-							<span class="checkmark"></span>
-						</label>
-						<label class="checkbox-container" for="loc-8">Media
-							<input type="checkbox" id="loc-8" name="location" onchange="updateLocations()"
 								value="Media">
 							<span class="checkmark"></span>
 						</label>
@@ -813,6 +791,28 @@
 
 					</div>
 				</div>
+
+
+				<!-- <script>
+						function updateIntercomRanges() {
+							var checkboxes = document.getElementsByName("intercom-range");
+							var checkedBoxes = [];
+							for (var i = 0; i < checkboxes.length; i++) {
+								if (checkboxes[i].checked) {
+									if (checkboxes[i].value == "Other") {
+										var otherRange = document.getElementById("other-range").value;
+										checkedBoxes.push(" " + otherRange);
+									}
+									else {
+										checkedBoxes.push(" " + checkboxes[i].value);
+									}
+								}
+							}
+							document.getElementById('hidden-range').value = checkedBoxes.toString();
+						}
+				</script> -->
+
+			</div>
 
 			<!-- -------------------- COMMENT SECTION -------------------- -->
 			<div class="comments-section">

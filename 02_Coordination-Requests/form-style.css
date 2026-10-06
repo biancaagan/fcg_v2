@@ -78,7 +78,8 @@ li {
 img.company-logo {
     width: 250px;
 }
-/* NAVBAR MENU */
+
+/* -------------------- NAVBAR MENU -------------------- */
 .menu {
     display: flex;
     gap: 1em;
@@ -100,7 +101,7 @@ img.company-logo {
     padding: 6.5px 14px;
 }
 
-/* COORDINATION REQUESTS - DROPDOWN MENU */
+/* -------------------- COORDINATION REQUESTS - DROPDOWN MENU -------------------- */
 .rf-requests {
     /* border-style: dotted; */
     position: relative;
@@ -110,13 +111,16 @@ img.company-logo {
     /* border-style: dotted; */
     background-color: #dbdbdb;
     padding: 0 0;
-    position: absolute;     /* with respect to parent */
+    position: absolute;
+    /* with respect to parent */
     display: none;
-    border-radius: 8px;
-    top: 35px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    top: 2.04em;
 }
 
-.dropdown li a + li {
+.dropdown li a+li {
     /* border-style: dotted; */
     margin-top: 0px;
 }
@@ -140,12 +144,13 @@ img.company-logo {
     background-color: #dbdbdb;
 }
 
-/* RESPONSIVE NAVBAR */
-.hack { /* input */
+/* -------------------- RESPONSIVE NAVBAR -------------------- */
+.hack {
+    /* input */
     display: none
 }
 
-/* HAMBURGER MENU */
+/* -------------------- HAMBURGER MENU -------------------- */
 .hamburger {
     background-color: white;
     display: none;
@@ -774,7 +779,7 @@ thead {
 
 .tooltip .tooltiptext {
     visibility: hidden;
-    width: 18vw;
+    width: 19vw;
     background-color: black;
     color: #fff;
     text-align: left;
