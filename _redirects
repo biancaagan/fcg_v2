@@ -1,26 +1,29 @@
-/about  /01_About/about.html   200!
+/about                          /01_About/about.html                                        200!
+/experience                     /01_About/experience.html                                   200!
+/meet-the-team                  /01_About/meet-the-team.html                                200!
+/partners                       /01_About/partners.html                                     200!
 
-/coordination-requests    /02_Coordination-Requests/coordination-requests.html   200!
+/coordination-requests          /02_Coordination-Requests/coordination-requests.html        200!
 
-/services   /03_Services/services.html 200!
+/services                       /03_Services/services.html                                  200!
 
-/rentals /03_Services/rentals.html     200!
+/rentals                        /03_Services/rentals.html                                   200!
 
-/request-rf-coordination    /03_Services/request-rf-coordination.html   200!
+/request-rf-coordination        /03_Services/request-rf-coordination.html                   200!
 
-/contact    /04_Contact/contact-form.html   200!
-/contact-submit     /04_Contact/contact-submission-landing-page.html  200!
-
-
-
-
-
+/contact                        /04_Contact/contact-form.html                               200!
+/contact-submit                 /04_Contact/contact-submission-landing-page.html            200!
 
 
-/okeechobee-2026  /02_Coordination-Requests/Example-Form/example-form.html     200!
-/head-trip-2026     /02_Coordination-Requests/Head-Trip-2026/head-trip-2026.html    200!
 
 
-/rf-request-submit  /rf-request-landing-page.html        200!
+
+
+
+/okeechobee-2026                /02_Coordination-Requests/Example-Form/example-form.html        200!
+/head-trip-2026                 /02_Coordination-Requests/Head-Trip-2026/head-trip-2026.html    200!
+
+
+/rf-request-submit              /rf-request-landing-page.html                                   200!
 
 

@@ -106,7 +106,7 @@ img.company-logo {
 }
 
 /* -------------------- COORDINATION REQUESTS - DROPDOWN MENU -------------------- */
-.rf-requests {
+.about-dropdown, .rf-requests {
     /* border-style: dotted; */
     position: relative;
     display: inline-block;
@@ -137,12 +137,23 @@ img.company-logo {
     text-align: center;
 }
 
+.dropdown li a {
+    display: block;
+    width: 100%;
+    padding: 0em 0.5em; /* moves the padding from the li to the link */
+    box-sizing: border-box;
+}
+
 .dropdown li:hover {
     /* border-style: dotted; */
     background-color: var(--fcg-green);
 }
 
 .rf-requests:hover .dropdown{
+    display: block;
+}
+
+.about-dropdown:hover .dropdown{
     display: block;
 }
 
