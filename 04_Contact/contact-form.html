@@ -70,10 +70,19 @@
                     <input type="text" name="Contact Name" placeholder="Your First and Last Name" required />
                 </div>
 
-                <div class="contact-form-item required-field">
-                    <label>Contact email:</label>
-                    <input type="text" name="Email" placeholder="Enter Email" required />
-                </div>
+                <div style="position: absolute; left: -9999px;" aria-hidden="true">
+					<label>
+						<input type="text" name="website" tabindex="-1" autocomplete="off" />
+					</label>
+				</div>
+
+				<div class="contact-form-item required-field">
+					<label>Contact email:</label>
+					<input id="Email" name="Email" type="email" placeholder="Enter email" maxlength="100"
+						autocomplete="email"
+						pattern="^(?!.*(immenseignite\.info|checkyourform\.xyz))(?!([^.@]*\.){4,}[^@]*@gmail\.com$)[^@\s]+@[^@\s]+\.[^@\s]+$"
+						title="Please enter a valid email address." required />
+				</div>
 
                 <div class="contact-form-item required-field">
                     <label>Contact phone:</label>
