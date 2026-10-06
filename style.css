@@ -109,6 +109,7 @@ img.company-logo {
 .rf-requests {
     /* border-style: dotted; */
     position: relative;
+    display: inline-block;
 }
 
 .dropdown {
@@ -121,7 +122,7 @@ img.company-logo {
     border-top-right-radius: 5px;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
-    top: 2.04em;
+    top: 100%;
 }
 
 .dropdown li a+li {
@@ -141,12 +142,16 @@ img.company-logo {
     background-color: var(--fcg-green);
 }
 
-.dropdown-menu:hover .dropdown {
-    /* transition-delay: 1s; */
-    /* border-style: dotted; */
+.rf-requests:hover .dropdown{
+    display: block;
+}
+
+/* .dropdown-menu:hover .dropdown {
+    transition-delay: 1s;
+    border-style: dotted;
     display: block;
     background-color: #dbdbdb;
-}
+} */
 
 /* -------------------- RESPONSIVE NAVBAR -------------------- */
 .hack {
@@ -195,7 +200,7 @@ img.company-logo {
 
     .dropdown {
         /* left: 50%; */
-        top: 34px;
+        top: 100%;
         /* transform: translateX(10%); */
     }
 
