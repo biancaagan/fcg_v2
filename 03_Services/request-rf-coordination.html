@@ -89,6 +89,11 @@
 
                 <!-- Items to be consolidated into hidden input as 'inquiry'-->
                 <div class="contact-form-item required-field">
+                    <label>Hiring Company:</label>
+                    <input type="text" id="inq-company" placeholder="Company Name" required />
+                </div>
+
+                <div class="contact-form-item required-field">
                     <label>Show Name:</label>
                     <input type="text" id="inq-show" placeholder="Show name" required />
                 </div>
@@ -129,12 +134,13 @@
 
             <script>
                 const fields = [
+                    ['Hiring Company', 'inq-company'],
                     ['Show Name', 'inq-show'],
                     ['Show Location', 'inq-show-loc'],
-                    ['Onsite Start Date', 'inq-onsite-start'],
-                    ['Onsite End Date', 'inq-onsite-end'],
+                    ['Onsite Start Date', 'inq-onsite-start', 'date'],
+                    ['Onsite End Date', 'inq-onsite-end', 'date'],
                     ['Scale of Show', 'inq-show-size'],
-                    ['Comments:', 'inq-comments']
+                    ['Comments', 'inq-comments']
                 ];
 
                 function formatDate(v) {
