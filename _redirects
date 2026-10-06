@@ -6,6 +6,8 @@
 
 /rentals /03_Services/rentals.html     200!
 
+/request-rf-coordination    /03_Services/request-rf-coordination.html   200!
+
 /contact    /04_Contact/contact-form.html   200!
 /contact-submit     /04_Contact/contact-submission-landing-page.html  200!
 

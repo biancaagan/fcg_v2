@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="/Site Files/Media/FCG Logo 2.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/style.css" />
+    <title>FCG</title>
+</head>
+
+<body>
+
+    <!-- ----------------------- TOP BAR / NAVIGATION ----------------------- -->
+    <nav class="navbar">
+        <!-- LOGO -->
+        <div class="logo">
+            <a href="/">
+                <img class="company-logo" src="/Site Files/Media/FCG Logo 1.png">
+            </a>
+        </div>
+        <!-- NAVIGATION MENU -->
+        <ul class="nav-links">
+
+            <!-- USING CHECKBOX HACK -->
+            <input type="checkbox" class="hack" id="checkbox_toggle" />
+            <label for="checkbox_toggle" class="hamburger">&#9776;</label>
+
+            <!-- NAVIGATION MENUS -->
+            <div class="menu">
+
+                <li><a href="/">Home</a></li>
+                <li><a href="https://freqcoordgroup.com/about">About</a></li>
+
+                <div class="dropdown-menu">
+                    <li class="rf-requests">
+                        <a href="https://freqcoordgroup.com/coordination-requests">Coordination Requests</a>
+                        <i class="fa fa-caret-down"></i>
+                        <!-- DROPDOWN MENU -->
+                        <ul class="dropdown">
+                            <li><a href="https://freqcoordgroup.com/okeechobee-2026">Okeechobee Music Fest</a></li>
+                            <li><a href="https://freqcoordgroup.com/head-trip-2026">Head Trip</a></li>
+                        </ul>
+                    </li>
+                </div>
+
+                <li><a href="https://freqcoordgroup.com/services">Services</a></li>
+                <li><a href="https://freqcoordgroup.com/contact">Contact</a></li>
+
+                </li>
+            </div>
+        </ul>
+    </nav>
+    <!-- ----------------------- ----------------------- ----------------------- -->
+
+    <main>
+
+        <div class="page-header">
+            <h1 class="page-title">Request RF Coordination</h1>
+            <hr>
+        </div>
+
+        <!-- CONTACT FORM // but with details for request RF coordination -->
+        <form class="contact-form" id="contact-form" method="POST"
+            action="https://script.google.com/macros/s/AKfycbwjkkkBdTKHTm_6_IfsQL17uOan7vuz1eaiR5gPw3V3uWh5Ot_tkGEzXT4ZC7AOgIpqBw/exec">
+
+            <div class="contact-container">
+                <div class="contact-form-item required-field">
+                    <label>Contact Name:</label>
+                    <input type="text" name="Contact Name" placeholder="Your First and Last Name" required />
+                </div>
+
+                <div class="contact-form-item required-field">
+                    <label>Contact email:</label>
+                    <input type="text" name="Email" placeholder="Enter Email" required />
+                </div>
+
+                <div class="contact-form-item required-field">
+                    <label>Contact phone:</label>
+                    <input type="text" name="Phone Number" placeholder="Enter Phone Number" required />
+                </div>
+
+                <div class="contact-form-item">
+                    <label>Topic:</label>
+                    <input type="text" name="Related Topic" value="Request RF Coordination" readonly>
+                </div>
+
+                <!-- Items to be consolidated into hidden input as 'inquiry'-->
+                <div class="contact-form-item">
+                    <label>Show Name:</label>
+                    <input type="text" id="inq-show" placeholder="Show name" required />
+                </div>
+
+                <div class="contact-form-item">
+                    <label>Show Location:</label>
+                    <input type="text" id="inq-show-loc" placeholder="Show Location" required />
+                </div>
+
+                <div class="contact-form-item">
+                    <label>Onsite Start Date:</label>
+                    <input type="date" id="inq-onsite-start" placeholder="Onsite Start Date" required />
+                </div>
+
+                <div class="contact-form-item">
+                    <label>Onsite End Date:</label>
+                    <input type="date" id="inq-onsite-end" placeholder="Onsite End Date" required />
+                </div>
+
+                <div class="contact-form-item">
+                    <label>Scale of Show:</label>
+                    <input type="text" id="inq-show-size" placeholder="Scale of Show" required />
+                    <div class="contact-form-notes" style="color: gray;">
+                        <i>&#40;Example: Expo floor, breakout rooms, X number of stages&#41;</i>
+                    </div>
+                </div>
+
+                <di class="contact-form-item">
+                    <label>Comments:</label>
+                    <textarea class="contact-entry" id="inq-comments" style="height: 200px;"
+                        placeholder="..."></textarea>
+                </div>
+
+
+                <!-- Hidden input to consolidate above entries into 'inquiry'-->
+                <input type="hidden" name="Inquiry" id="Inquiry">
+
+                <script>
+                    const fields = [
+                        ['Show Name', 'inq-show'],
+                        ['Show Location', 'inq-show-loc'],
+                        ['Onsite Start Date', 'inq-onsite-start'],
+                        ['Onsite End Date', 'inq-onsite-end'],
+                        ['Scale of Show', 'inq-show-size'],
+                        ['Comments:', 'inq-comments']
+                    ];
+
+                    function formatDate(v){
+                        if (!v) return '';
+                        const [y, m, d] = v.split('-');
+                        return `${m}/${d}/${y}`;
+                    }
+
+                    function combineInquiry() {
+                        document.getElementById('Inquiry').value = fields
+                            .map(([label, id, type]) => {
+                                let value = document.getElementById(id).value.trim();
+                                if (type === 'date') value = formatDate(value);
+                                return `${label}: ${value}`;
+                            })
+                            .join('\n');
+                    }
+
+                    document.querySelector('form').addEventListener('submit', combineInquiry);
+                </script>
+
+                <!-- <div class="contact-form-item">
+                    <textarea class="contact-entry" name="Inquiry" style="height: 200px;"
+                        placeholder="Write something..."></textarea>
+                </div> -->
+
+
+                <!-- -------------------- SUBMIT BUTTON -------------------- -->
+                <button type="submit" id="form-submit-button" class="submit-button center">SUBMIT</button>
+
+                <!-- ----------------------- SUBMIT BUTTON SCRIPT ----------------------- -->
+                <script>
+                    // https://stackoverflow.com/questions/70767778/html-form-submission-to-google-sheets-using-apps-scripts-landing-thank-you-pag
+                    window.addEventListener("load", function () {
+                        const form = document.getElementById('contact-form');
+
+                        form.addEventListener("submit", function (e) {
+                            // Disable submit button after first click:
+                            document.getElementById('form-submit-button').disabled = true;
+                            document.getElementById('form-submit-button').textContent = 'Submitting...';
+
+                            e.preventDefault();
+                            const data = new FormData(form);
+                            const action = e.target.action;
+                            fetch(action, {
+                                method: 'POST',
+                                body: new FormData(form),
+                                mode: 'no-cors'
+                            })
+                                .then(() => {
+                                    // window.location.href = 'https://freqcoordgroup.com/wwwy25-submit';
+                                    window.location.href = 'https://freqcoordgroup.com/contact-submit';
+                                })
+                        });
+                    });
+                </script>
+
+            </div>
+            </div>
+
+            <!-- <div class="contact-container">
+            Please email brooks@frequencycoordinationgroup.com with any questions or concerns.
+        </div>" -->
+
+        </form>
+
+    </main>
+
+
+    <!-- ----------------------- FOOTER ----------------------- -->
+    <footer>
+        <div class="social-links">
+            <a class="social-icon" href="http://www.instagram.com/frequencycoordinationgroup">
+                <img src="/Site Files/Media/icon-instagram.png" width="25px">
+            </a>
+            <a class="social-icon" href="http://www.facebook.com/frequencycoordinationgroup">
+                <img src="/Site Files/Media/icon-facebook.png" width="25px">
+            </a>
+        </div>
+
+        <h2 class="footer-credits"><a id="copyright" href="https://www.needafreq.com/" target="_blank"
+                rel="noopener noreferrer">&copy;</a> 2026 | Frequency Coordination Group, LLC.</h2>
+    </footer>
+    <!-- ----------------------- ----------------------- ----------------------- -->
+</body>
+
+</html>
