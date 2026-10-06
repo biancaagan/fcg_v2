@@ -153,10 +153,14 @@ function hideRFtable() { // https://codepen.io/dhanushbadge/pen/AYRWLW
 // Radio display functions:
 function showInfo() { // https://codepen.io/dhanushbadge/pen/AYRWLW
     document.getElementById('radio-popup').style.display = 'block';
+
+    document.querySelector('[name="radio-list"]').required = true;
 }
 
 function hideInfo() { // https://codepen.io/dhanushbadge/pen/AYRWLW
     document.getElementById('radio-popup').style.display ='none';
+
+    document.querySelector('[name="radio-list"]').required = false;
 }
 // ----------------------------------------------------------
 
@@ -310,12 +314,6 @@ function showVideotable() { // https://codepen.io/dhanushbadge/pen/AYRWLW
 }
 
 
-
-
-
-
-
-
 function hideVideotable() { // https://codepen.io/dhanushbadge/pen/AYRWLW
     document.getElementById('device-info').style.display ='none';
 }
@@ -338,10 +336,19 @@ function hideVideoInfo() { // https://codepen.io/dhanushbadge/pen/AYRWLW
 // Intercom display functions:
 function showIntercom() { // https://codepen.io/dhanushbadge/pen/AYRWLW
     document.getElementById('intercom-popup').style.display = 'block';
+
+    document.querySelector('[name="Pack Count"]').required = true;
+    document.querySelector('[name="intercom-range"]').required = true;
+    document.querySelector('[name="FreeSpeak Transceiver Type"]').required = true;
+    
 }
 
 function hideIntercom() { // https://codepen.io/dhanushbadge/pen/AYRWLW
     document.getElementById('intercom-popup').style.display ='none';
+
+    document.querySelector('[name="Pack Count"]').required = false;
+    document.querySelector('[name="intercom-range"]').required = false;
+    document.querySelector('[name="FreeSpeak Transceiver Type"]').required = false;
 }
 
 // Wireless video display functions:

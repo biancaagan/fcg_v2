@@ -35,17 +35,16 @@
 				<li><a href="/">Home</a></li>
 				<li><a href="https://freqcoordgroup.com/about">About</a></li>
 
-				<div class="dropdown-menu">
+				<ul class="dropdown-menu">
 					<li class="rf-requests">
 						<a href="https://freqcoordgroup.com/coordination-requests">Coordination Requests</a>
 						<i class="fa fa-caret-down"></i>
 						<!-- DROPDOWN MENU -->
 						<ul class="dropdown">
-							<li><a href="https://freqcoordgroup.com/okeechobee-2026">Okeechobee Music Fest</a></li>
 							<li><a href="https://freqcoordgroup.com/head-trip-2026">Head Trip</a></li>
 						</ul>
 					</li>
-				</div>
+				</ul>
 
 				<li><a href="https://freqcoordgroup.com/services">Services</a></li>
 				<li><a href="https://freqcoordgroup.com/contact">Contact</a></li>
@@ -132,9 +131,24 @@
 					<input name="Name" type="text" placeholder="Enter full name" required />
 				</div>
 
+				<!-- <div style="position: absolute; left: -9999px;" aria-hidden="true">
+					<label>
+						<input type="text" name="website" tabindex="-1" autocomplete="off" />
+					</label>
+				</div> -->
+
+				<div>
+					<label>
+						<input type="text" name="website" tabindex="-1" autocomplete="off" />
+					</label>
+				</div>
+
 				<div class="form-item required-field">
 					<label>Contact email:</label>
-					<input name="Email" type="text" placeholder="Enter email" required />
+					<input id="Email" name="Email" type="email" placeholder="Enter email" maxlength="100"
+						autocomplete="email"
+						pattern="^(?!.*(immenseignite\.info|checkyourform\.xyz))(?!([^.@]*\.){4,}[^@]*@gmail\.com$)[^@\s]+@[^@\s]+\.[^@\s]+$"
+						title="Please enter a valid email address." required />
 				</div>
 
 				<div class="form-item required-field">
@@ -354,11 +368,6 @@
 					</div>
 					<br>
 
-					<!-- Code for file upload option -->
-					<!-- <label for="radio-files">Select file(s):</label>
-                            <input type="file" id="radio-files" name="radio-files" multiple><br><br> -->
-					<!-- <br> -->
-
 					<textarea id="radio-list" name="radio-list" rows="4" cols="50" onchange="updateRadioFreqs()"
 						placeholder="List ALL channel #s and their frequencies...&#10;1: 462.3625&#10;2: 462.7625&#10;and so on..."></textarea>
 
@@ -549,8 +558,6 @@
 					<!-- "What range(s) is your system operating in?" -->
 					<div class="form-item required-field">
 						What range is your system operating in?
-					</div>
-					<div>
 						<div class="checkbox-group">
 							<label class="checkbox-container" for="range-1">902 - 928MHz &#40;ISM&#41;
 								<input type="checkbox" id="range-1" name="intercom-range"
@@ -580,7 +587,6 @@
 							<input name="Operating Spectrum" id="hidden-range" type="text"
 								placeholder="Selected Ranges" />
 						</div>
-
 					</div>
 
 					<br>
