@@ -116,52 +116,47 @@
                     </div>
                 </div>
 
-                <di class="contact-form-item">
+                <div class="contact-form-item">
                     <label>Comments:</label>
                     <textarea class="contact-entry" id="inq-comments" style="height: 200px;"
                         placeholder="..."></textarea>
-                </div>
+            </div>
+
+            <!-- Hidden input to consolidate above entries into 'inquiry'-->
+            <input type="hidden" name="Inquiry" id="Inquiry">
 
 
-                <!-- Hidden input to consolidate above entries into 'inquiry'-->
-                <input type="hidden" name="Inquiry" id="Inquiry">
 
-                <script>
-                    const fields = [
-                        ['Show Name', 'inq-show'],
-                        ['Show Location', 'inq-show-loc'],
-                        ['Onsite Start Date', 'inq-onsite-start'],
-                        ['Onsite End Date', 'inq-onsite-end'],
-                        ['Scale of Show', 'inq-show-size'],
-                        ['Comments:', 'inq-comments']
-                    ];
+            <script>
+                const fields = [
+                    ['Show Name', 'inq-show'],
+                    ['Show Location', 'inq-show-loc'],
+                    ['Onsite Start Date', 'inq-onsite-start'],
+                    ['Onsite End Date', 'inq-onsite-end'],
+                    ['Scale of Show', 'inq-show-size'],
+                    ['Comments:', 'inq-comments']
+                ];
 
-                    function formatDate(v){
-                        if (!v) return '';
-                        const [y, m, d] = v.split('-');
-                        return `${m}/${d}/${y}`;
-                    }
+                function formatDate(v) {
+                    if (!v) return '';
+                    const [y, m, d] = v.split('-');
+                    return `${m}/${d}/${y}`;
+                }
 
-                    function combineInquiry() {
-                        document.getElementById('Inquiry').value = fields
-                            .map(([label, id, type]) => {
-                                let value = document.getElementById(id).value.trim();
-                                if (type === 'date') value = formatDate(value);
-                                return `${label}: ${value}`;
-                            })
-                            .join('\n');
-                    }
+                function combineInquiry() {
+                    document.getElementById('Inquiry').value = fields
+                        .map(([label, id, type]) => {
+                            let value = document.getElementById(id).value.trim();
+                            if (type === 'date') value = formatDate(value);
+                            return `${label}: ${value}`;
+                        })
+                        .join('\n');
+                }
 
-                    document.querySelector('form').addEventListener('submit', combineInquiry);
-                </script>
+                document.querySelector('form').addEventListener('submit', combineInquiry);
+            </script>
 
-                <!-- <div class="contact-form-item">
-                    <textarea class="contact-entry" name="Inquiry" style="height: 200px;"
-                        placeholder="Write something..."></textarea>
-                </div> -->
-
-
-                <!-- -------------------- SUBMIT BUTTON -------------------- -->
+            <!-- -------------------- SUBMIT BUTTON -------------------- -->
                 <button type="submit" id="form-submit-button" class="submit-button center">SUBMIT</button>
 
                 <!-- ----------------------- SUBMIT BUTTON SCRIPT ----------------------- -->
@@ -191,8 +186,9 @@
                     });
                 </script>
 
+
             </div>
-            </div>
+
 
             <!-- <div class="contact-container">
             Please email brooks@frequencycoordinationgroup.com with any questions or concerns.
