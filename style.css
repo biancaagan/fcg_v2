@@ -255,6 +255,7 @@ img.company-logo {
     width: 65vw;
     margin: 10px auto auto auto;
     padding: 20px;
+    text-align: center;
     font-family: Consolas;
     font-size: clamp(1rem, 0.8rem + 0.7vw, 1.4rem);
     /* was 1.5vw */
@@ -303,6 +304,29 @@ hr.dashed-line {
 
 
 /* -------------------- ABOUT -------------------- */
+/* EXPERIENCE */
+.experience-grid {
+    /* border: dotted; */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin: 4vw 14vw;
+}
+
+.experience-grid-cell{
+    /* border: dotted; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.experience-grid-cell img {
+    /* border: dotted; */
+    max-width: 100%;
+    max-height: 80%;
+    display: block;
+}
+
 /*  MEET THE TEAM  */
 .team-container {
     /* border-style: dotted; */
@@ -697,8 +721,10 @@ img.show-logo {
         transform: translateX(-50%);
     } */
 
-    .dropdown { /* pushes rest of the menu contents below the dropdown */
-        position: static;       /* flows in the menu and pushes items below it down */
+    .dropdown {
+        /* pushes rest of the menu contents below the dropdown */
+        position: static;
+        /* flows in the menu and pushes items below it down */
         transform: none;
         margin: 0 auto;
         width: min(18em, 90vw);
