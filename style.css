@@ -672,6 +672,7 @@ img.show-logo {
         padding: 16px 0;
         margin-top: 50px;
         width: 100%;
+        z-index: 1000;
     }
 
     .menu li:hover {
@@ -689,10 +690,22 @@ img.show-logo {
         display: block;
     }
 
-    .dropdown {
-        /* left: 50%; */
+    /* .dropdown {
         top: 100%;
-        /* transform: translateX(10%); */
+        left: 50%;
+        z-index: 1001;
+        transform: translateX(-50%);
+    } */
+
+    .dropdown { /* pushes rest of the menu contents below the dropdown */
+        position: static;       /* flows in the menu and pushes items below it down */
+        transform: none;
+        margin: 0 auto;
+        width: min(18em, 90vw);
+    }
+
+    .dropdown li {
+        width: min(18em, 90vw);
     }
 
     .dropdown li:hover {
