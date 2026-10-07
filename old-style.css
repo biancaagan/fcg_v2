@@ -27,8 +27,7 @@
     font-weight: normal;
 }
 
-
-/* -------------------- UTILITIES -------------------- */
+/* UTILITIES */
 * {
     margin: 0;
     padding: 0;
@@ -43,6 +42,8 @@ body {
 }
 
 main {
+    /* border-style: dotted; */
+    /* margin-bottom: 100px; */
     flex: 1;
 }
 
@@ -53,31 +54,6 @@ a {
 li {
     list-style: none;
 }
-
-footer {
-    margin-top: 4em;
-    padding-top: 0.625em;
-    padding-bottom: 1em;
-    width: 100%;
-    text-align: center;
-    background-color: white;
-}
-
-/* -------------------- -------------------- -------------------- */
-
-
-/* -------------------- LOGO -------------------- */
-.logo {
-    cursor: pointer;
-    margin-left: 25px;
-}
-
-img.company-logo {
-    width: 250px;
-}
-
-/* -------------------- -------------------- -------------------- */
-
 
 /* -------------------- NAVBAR STYLING -------------------- */
 .navbar {
@@ -96,12 +72,22 @@ img.company-logo {
     color: black;
 }
 
-/*  NAVBAR MENU  */
+/* -------------------- LOGO -------------------- */
+.logo {
+    cursor: pointer;
+    margin-left: 25px;
+}
+
+img.company-logo {
+    width: 250px;
+}
+
+
+/* -------------------- NAVBAR MENU -------------------- */
 .menu {
     display: flex;
     gap: 1em;
-    font-size: 1.125rem;
-    /* was 18px */
+    font-size: 18px;
     margin-right: 50px;
 }
 
@@ -119,15 +105,15 @@ img.company-logo {
     padding: 6.5px 14px;
 }
 
-/* DROPDOWN MENUS */
-.about-dropdown,
-.rf-requests {
+/* -------------------- COORDINATION REQUESTS - DROPDOWN MENU -------------------- */
+.about-dropdown, .rf-requests {
     /* border-style: dotted; */
     position: relative;
     display: inline-block;
 }
 
 .dropdown {
+    /* border-style: dotted; */
     background-color: #dbdbdb;
     padding: 0 0;
     position: absolute;
@@ -140,10 +126,13 @@ img.company-logo {
 }
 
 .dropdown li a+li {
+    /* border-style: dotted; */
     margin-top: 0px;
 }
 
 .dropdown li {
+    /* border-style: dotted; */
+    /* padding: 0.5em; */
     width: 18em;
     text-align: center;
 }
@@ -151,44 +140,88 @@ img.company-logo {
 .dropdown li a {
     display: block;
     width: 100%;
-    padding: 0em 0.5em;
-    /* moves the padding from the li to the link */
+    padding: 0em 0.5em; /* moves the padding from the li to the link */
     box-sizing: border-box;
 }
 
 .dropdown li:hover {
+    /* border-style: dotted; */
     background-color: var(--fcg-green);
 }
 
-.rf-requests:hover .dropdown {
+.rf-requests:hover .dropdown{
     display: block;
 }
 
-.about-dropdown:hover .dropdown {
+.about-dropdown:hover .dropdown{
     display: block;
 }
 
-/*  RESPONSIVE NAVBAR  */
+/* .dropdown-menu:hover .dropdown {
+    transition-delay: 1s;
+    border-style: dotted;
+    display: block;
+    background-color: #dbdbdb;
+} */
+
+/* -------------------- RESPONSIVE NAVBAR -------------------- */
 .hack {
     /* input */
     display: none
 }
 
-/*  HAMBURGER MENU  */
+/* -------------------- HAMBURGER MENU -------------------- */
 .hamburger {
     background-color: white;
     display: none;
-    font-size: 1.5rem;
-    /* was 24px */
+    font-size: 24px;
     user-select: none;
     cursor: pointer;
     margin-right: 100px;
 }
 
-/* -------------------- -------------------- -------------------- */
+/* -------------------- MEDIA QUERIES -------------------- */
+@media (max-width: 1075px) {
+    .menu {
+        display: none;
+        position: absolute;
+        background-color: white;
+        right: 0;
+        left: 0;
+        text-align: center;
+        padding: 16px 0;
+        margin-top: 50px;
+        width: 100%;
+    }
+
+    .menu li:hover {
+        cursor: pointer;
+        display: inline-block;
+        background-color: var(--fcg-green);
+        transition: 0.3s ease;
+    }
+
+    .hack:checked~.menu {
+        display: block;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .dropdown {
+        /* left: 50%; */
+        top: 100%;
+        /* transform: translateX(10%); */
+    }
+
+    .dropdown li:hover {
+        background-color: var(--fcg-green);
+    }
+}
 
 
-/* -------------------- DEFAULT STYLINGS -------------------- */
+/* -------------------- PAGE DEFAULT -------------------- */
 .page-section {
     /* border-style: dotted; */
     text-align: center;
@@ -209,8 +242,7 @@ img.company-logo {
     /* font-family: Georgia, 'Times New Roman', Times, serif; */
     font-family: Consolas;
     width: fit-content;
-    font-size: clamp(1.75rem, 1rem + 2.5vw, 3.5rem);
-    /* was 4vw */
+    font-size: 4vw;
     margin: 30px auto auto auto;
     padding: 20px;
 }
@@ -222,8 +254,7 @@ img.company-logo {
     padding: 20px;
     font-family: Futura-Medium;
     color: var(--fcg-green);
-    font-size: clamp(1.1rem, 0.8rem + 1.2vw, 2rem);
-    /* was 2vw */
+    font-size: 2vw;
 }
 
 .page-subtitle-black {
@@ -233,8 +264,7 @@ img.company-logo {
     padding: 20px;
     font-family: Futura-Medium;
     color: #000000;
-    font-size: clamp(1.1rem, 0.8rem + 1.2vw, 2rem);
-    /* was 2vw */
+    font-size: 2vw;
 }
 
 .page-text {
@@ -244,8 +274,7 @@ img.company-logo {
     margin: 10px auto auto auto;
     padding: 20px;
     font-family: Consolas;
-    font-size: clamp(1rem, 0.8rem + 0.7vw, 1.4rem);
-    /* was 1.5vw */
+    font-size: 1.5vw;
     word-wrap: break-word;
 }
 
@@ -256,8 +285,7 @@ img.company-logo {
     margin: 10px auto auto auto;
     padding: 20px;
     font-family: Consolas;
-    font-size: clamp(1rem, 0.8rem + 0.7vw, 1.4rem);
-    /* was 1.5vw */
+    font-size: 1.5vw;
     word-wrap: break-word;
 }
 
@@ -266,44 +294,7 @@ hr.dashed-line {
     border-top: 2px dashed #000;
 }
 
-.generic-button {
-    background-color: var(--fcg-green);
-    border: 0.118em solid black;
-    border-radius: 1em;
-    color: black;
-    padding: 0.4em 0.8em 0.25em 0.8em;
-    text-align: center;
-    text-decoration: none;
-    font-family: Futura-Book;
-    font-size: clamp(1rem, 0.7rem + 1vw, 1.75rem);
-    /* was 2vw */
-    cursor: pointer;
-    margin: 2vw auto 2vw auto;
-    transition: background-color 0.3s ease, border-color 0.3s ease,
-        color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.generic-button:hover {
-    box-shadow: 0 0.3em 1em 0 rgba(173, 173, 173, 0.24),
-        0 1.05em 1.55em 0 rgba(173, 173, 173, 0.24);
-    transition: all 0.3s ease 0s;
-    border-color: #81BB4E;
-    background-color: #81BB4E;
-    color: white;
-}
-
-.center {
-    display: block;
-    width: fit-content;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* -------------------- -------------------- -------------------- */
-
-
-/* -------------------- ABOUT -------------------- */
-/*  MEET THE TEAM  */
+/* -------------------- MEET THE TEAM -------------------- */
 .team-container {
     /* border-style: dotted; */
     /* width: 80%; */
@@ -348,8 +339,7 @@ hr.dashed-line {
     /* margin: 0 auto 0 auto; */
     /* padding: 0.2vw; */
     font-family: Futura-Medium;
-    font-size: clamp(0.9rem, 0.6rem + 0.8vw, 1.4rem);
-    /* was 1.5vw */
+    font-size: 1.5vw;
     word-wrap: break-word;
 }
 
@@ -360,81 +350,70 @@ hr.dashed-line {
     /* margin: 0 auto 0 auto; */
     /* padding: 0.2vw; */
     font-family: Consolas;
-    font-size: clamp(0.75rem, 0.5rem + 0.6vw, 1.1rem);
-    /* was 1.2vw */
+    font-size: 1.2vw;
     word-wrap: break-word;
 }
 
-/* -------------------- -------------------- -------------------- */
 
-
-/* -------------------- FORMS -------------------- */
-input[type=text] {
-    width: 100%;
-    height: 2vw;
-    /* padding: 12px 20px;
-    margin: 8px 0; */
-    padding: 1.5vw 1vw;
-    margin: 0.5vw 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    /* font-size: 18px; */
+/* -------------------- RENTALS - HOVER BOXES -------------------- */
+.inventory-hoverbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 10px 14px;
+    background: #ffffff;
+    color: #222;
+    border-radius: 6px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, .25);
     font-family: Futura-Book;
-    font-size: clamp(0.85rem, 0.6rem + 0.6vw, 1.2rem);
-    /* was 1.3vw */
+    font-size: .9em;
+    white-space: pre-line;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity .15s;
+    z-index: 10;
 }
 
-input[type=email] {
-    width: 100%;
-    height: 2vw;
-    /* padding: 12px 20px;
-    margin: 8px 0; */
-    padding: 1.5vw 1vw;
-    margin: 0.5vw 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    /* font-size: 18px; */
-    font-family: Futura-Book;
-    font-size: clamp(0.85rem, 0.6rem + 0.6vw, 1.2rem);
-    /* was 1.3vw */
+.inventory-hoverbox.visible {
+    opacity: 1;
 }
 
-input[type=date] {
-    height: 2vw;
-    /* padding: 12px 20px;
-    margin: 8px 0; */
-    padding: 1.5vw 1vw;
-    margin: 0.5vw 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    /* font-size: 18px; */
+
+
+
+
+/* -------------------- RF FORM -------------------- */
+
+
+
+
+/* -------------------- CONTACT -------------------- */
+.contact-button {
+    background-color: var(--fcg-green);
+    border: 0.25vw solid black;
+    border-radius: 2vw;
+    color: black;
+    padding: 0.8vw 1vw 0.5vw 1vw;
+    text-align: center;
+    text-decoration: none;
     font-family: Futura-Book;
-    font-size: clamp(0.85rem, 0.6rem + 0.6vw, 1.2rem);
-    /* was 1.3vw */
+    font-size: 2vw;
+    cursor: pointer;
+    margin: 2vw auto 6vw auto;
 }
 
-select {
-    /* border-style: dotted; */
-    width: fit-content;
-    max-width: 100%;
-    margin: 0;
-    padding: 0.5em 0.75em 0.4em 0.75em;
-    font-family: Futura-Book;
-    font-size: clamp(0.85rem, 0.6rem + 0.6vw, 1.2rem);
-    /* was 1.3vw */
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
+.contact-button:hover {
+    box-shadow: 0 5px 16px 0 rgba(173, 173, 173, 0.24), 0 17px 25px 0 rgba(173, 173, 173, 0.24);
+    transition: all 0.3s ease 0s;
+    border: 0.25vw solid #81BB4E;
+    border-radius: 2vw;
+    background-color: #81BB4E;
+    color: white;
 }
 
-/*  RF FORMS  */
-/*  COORDINATION REQUESTS - LOGO CONTAINER  */
+
+
+/* -------------------- LOGO CONTAINER - COORDINATION REQUESTS -------------------- */
 .logo-container {
     border-style: dotted;
     border-radius: 2vw;
@@ -449,52 +428,7 @@ img.show-logo {
     width: 60vw;
 }
 
-/*  CONTACT FORM  */
-.contact-container {
-    margin: 2vw auto 10vw auto;
-    width: 50%;
-    border: 0.25vw solid #81BB4E;
-    padding: 10px;
-    border-radius: 5px;
-    background-color: #f2f2f2;
-    padding: 20px;
-    font-family: Futura-Book;
-    font-size: clamp(0.9rem, 0.6rem + 0.7vw, 1.3rem);
-    /* was 1.4vw */
-}
-
-.required-field::before {
-    content: "* ";
-    color: red;
-}
-
-.contact-form-item {
-    padding: 0.5vw 1vw 0.5vw 1vw;
-    font-family: Futura-Medium;
-    font-size: clamp(0.9rem, 0.6rem + 0.7vw, 1.3rem);
-    /* was 1.4vw */
-}
-
-.contact-form-notes {
-    /* border-style: dotted; */
-    padding: 0.5vw 1vw 0.5vw 1vw;
-    font-family: Futura-Medium;
-    font-size: clamp(0.9rem, 0.6rem + 0.7vw, 1.3rem);
-    /* was 1.4vw */
-    overflow-wrap: break-word;
-}
-
-.contact-entry {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-/* -------------------- -------------------- -------------------- */
-
-
-/*  RENTALS / INVENTORY  */
+/* -------------------- RENTALS / INVENTORY -------------------- */
 .rentals-button {
     background-color: var(--fcg-green);
     border: 0.25vw solid black;
@@ -504,13 +438,35 @@ img.show-logo {
     text-align: center;
     text-decoration: none;
     font-family: Futura-Book;
-    font-size: clamp(1rem, 0.7rem + 1vw, 1.75rem);
-    /* was 2vw */
+    font-size: 2vw;
     cursor: pointer;
     margin: 2vw auto 2vw auto;
 }
 
 .rentals-button:hover {
+    box-shadow: 0 5px 16px 0 rgba(173, 173, 173, 0.24), 0 17px 25px 0 rgba(173, 173, 173, 0.24);
+    transition: all 0.3s ease 0s;
+    border: 0.25vw solid #81BB4E;
+    border-radius: 2vw;
+    background-color: #81BB4E;
+    color: white;
+}
+
+.generic-button {
+    background-color: var(--fcg-green);
+    border: 0.25vw solid black;
+    border-radius: 2vw;
+    color: black;
+    padding: 0.8vw 1vw 0.5vw 1vw;
+    text-align: center;
+    text-decoration: none;
+    font-family: Futura-Book;
+    font-size: 2vw;
+    cursor: pointer;
+    margin: 2vw auto 2vw auto;
+}
+
+.generic-button:hover {
     box-shadow: 0 5px 16px 0 rgba(173, 173, 173, 0.24), 0 17px 25px 0 rgba(173, 173, 173, 0.24);
     transition: all 0.3s ease 0s;
     border: 0.25vw solid #81BB4E;
@@ -545,32 +501,15 @@ img.show-logo {
     text-align: center;
     font-family: Consolas;
     font-weight: bolder;
-    font-size: clamp(0.8rem, 0.5rem + 0.7vw, 1.3rem);
-    /* was 1.4vw */
+    font-size: 1.4vw;
     cursor: crosshair;
 }
 
-.inventory-hoverbox {
-    position: fixed;
+/* .item, .item-details {
+    position: absolute;
     top: 0;
     left: 0;
-    padding: 10px 14px;
-    background: #ffffff;
-    color: #222;
-    border-radius: 6px;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, .25);
-    font-family: Futura-Book;
-    font-size: .9em;
-    white-space: pre-line;
-    pointer-events: none;
-    opacity: 0;
-    transition: opacity .15s;
-    z-index: 10;
-}
-
-.inventory-hoverbox.visible {
-    opacity: 1;
-}
+} */
 
 .item {
     position: relative;
@@ -585,8 +524,7 @@ img.show-logo {
     justify-content: center;
     text-align: center;
     font-family: Consolas;
-    font-size: clamp(0.75rem, 0.5rem + 0.6vw, 1.1rem);
-    /* was 1.2vw */
+    font-size: 1.2vw;
 }
 
 .item-popup {
@@ -620,17 +558,156 @@ img.show-logo {
     /* Makes the pop-up fully opaque (for the fade effect) */
 }
 
-/* -------------------- -------------------- -------------------- */
 
-/* -------------------- // -------------------- */
-/* -------------------- -------------------- -------------------- */
+
+/* -------------------- CONTACT FORM -------------------- */
+.contact-container {
+    margin: 2vw auto 10vw auto;
+    width: 50%;
+    border: 0.25vw solid #81BB4E;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+    font-family: Futura-Book;
+    font-size: 1.4vw;
+}
+
+.required-field::before{
+    content: "* ";
+    color: red;
+}
+
+.contact-form-item {
+    /* border-style: dotted; */
+    /* padding: 10px 10px 10px 10px; */
+    /* font-size: 18px; */
+    padding: 0.5vw 1vw 0.5vw 1vw;
+    font-family: Futura-Medium;
+    font-size: 1.4vw;
+}
+
+.contact-form-notes {
+    /* border-style: dotted; */
+    padding: 0.5vw 1vw 0.5vw 1vw;
+    font-family: Futura-Medium;
+    font-size: 1.4vw;
+    overflow-wrap: break-word;
+}
+
+select {
+    /* border-style: dotted; */
+    width: 15vw;
+    height: 2.5vw;
+    margin: 0vw 0vw 0vw 0vw;
+    padding: 5px 0;
+    font-family: Futura-Book;
+    font-size: 1.3vw;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.contact-entry {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input[type=text]{
+    width: 100%;
+    height: 2vw;
+    /* padding: 12px 20px;
+    margin: 8px 0; */
+    padding: 1.5vw 1vw;
+    margin: 0.5vw 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    /* font-size: 18px; */
+    font-family: Futura-Book;
+    font-size: 1.3vw;
+}
+
+input[type=email]{
+    width: 100%;
+    height: 2vw;
+    /* padding: 12px 20px;
+    margin: 8px 0; */
+    padding: 1.5vw 1vw;
+    margin: 0.5vw 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    /* font-size: 18px; */
+    font-family: Futura-Book;
+    font-size: 1.3vw;
+}
+
+input[type=date]{
+    height: 2vw;
+    /* padding: 12px 20px;
+    margin: 8px 0; */
+    padding: 1.5vw 1vw;
+    margin: 0.5vw 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    /* font-size: 18px; */
+    font-family: Futura-Book;
+    font-size: 1.3vw;
+}
+
+.submit-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--fcg-green);
+    border: 0.25vw solid black;
+    border-radius: 2vw;
+    color: black;
+    padding: 0.8vw 2vw 0.4vw 2vw;
+    text-align: center;
+    text-decoration: none;
+    font-family: Futura-Book;
+    font-size: 2vw;
+    cursor: pointer;
+    margin: 2vw auto 2vw auto;
+}
+
+.submit-button:hover {
+    /* box-shadow: 0 5px 16px 0 rgba(0,0,0,0.24),0 17px 25px 0 rgba(0,0,0,0.19); */
+
+    box-shadow: 0 5px 16px 0 rgba(173, 173, 173, 0.24),0 17px 25px 0 rgba(173, 173, 173, 0.24);
+    transition: all 0.3s ease 0s;
+    border: 0.25vw solid #81BB4E;
+    border-radius: 2vw;
+    background-color: #81BB4E;
+    color: white;
+}
 
 
 /* -------------------- FOOTER -------------------- */
+footer {
+    /* border-style: dotted; */
+    /* position: absolute; */
+    bottom: 0;
+    padding: 10px 0 10px 0;
+    margin-bottom: 20px;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    background-color: white;
+    border-top: 1px solid black;
+}
+
 .footer-credits {
     font-family: Consolas;
-    font-size: clamp(0.75rem, 0.5rem + 0.5vw, 1.1rem);
-    /* was 1.2vw */
+    font-size: 1.2vw;
     margin-top: 2vw;
 }
 
@@ -656,50 +733,6 @@ img.show-logo {
     text-decoration: none;
 }
 
-/* -------------------- -------------------- -------------------- */
-
-
-
-/* -------------------- MEDIA QUERIES -------------------- */
-@media (max-width: 1075px) {
-    .menu {
-        display: none;
-        position: absolute;
-        background-color: white;
-        right: 0;
-        left: 0;
-        text-align: center;
-        padding: 16px 0;
-        margin-top: 50px;
-        width: 100%;
-    }
-
-    .menu li:hover {
-        cursor: pointer;
-        display: inline-block;
-        background-color: var(--fcg-green);
-        transition: 0.3s ease;
-    }
-
-    .hack:checked~.menu {
-        display: block;
-    }
-
-    .hamburger {
-        display: block;
-    }
-
-    .dropdown {
-        /* left: 50%; */
-        top: 100%;
-        /* transform: translateX(10%); */
-    }
-
-    .dropdown li:hover {
-        background-color: var(--fcg-green);
-    }
-}
-
 
 /* MOBILE */
 @media only screen and (max-width: 600px) {
@@ -720,30 +753,26 @@ img.show-logo {
     }
 
     .page-title {
-        font-size: clamp(1.5rem, 1.1rem + 2.5vw, 2.25rem);
-        /* was 8vw */
+        font-size: 8vw;
         text-align: center;
     }
 
     .page-subtitle {
-        font-size: clamp(1.1rem, 0.9rem + 2vw, 1.5rem);
-        /* was 6vw */
+        font-size: 6vw;
         text-align: center;
         inline-size: 300px;
         text-wrap: break-word;
     }
 
     .page-subtitle-black {
-        font-size: clamp(1.1rem, 0.9rem + 2vw, 1.5rem);
-        /* was 6vw */
+        font-size: 6vw;
         text-align: center;
         inline-size: 300px;
         text-wrap: break-word;
     }
 
     .page-subtitle-green {
-        font-size: clamp(1.1rem, 0.9rem + 2vw, 1.5rem);
-        /* was 6vw */
+        font-size: 6vw;
         text-align: center;
         inline-size: 300px;
         text-wrap: break-word;
@@ -751,29 +780,24 @@ img.show-logo {
 
     .page-text {
         width: 80vw;
-        font-size: clamp(0.95rem, 0.85rem + 1vw, 1.15rem);
-        /* was 4vw */
+        font-size: 4vw;
     }
 
     .page-desc {
         width: 80vw;
-        font-size: clamp(0.95rem, 0.85rem + 1vw, 1.15rem);
-        /* was 4vw */
+        font-size: 4vw;
     }
 
     .team-container-title {
-        font-size: clamp(0.65rem, 0.5rem + 1vw, 0.9rem);
-        /* was 3vw */
+        font-size: 3vw;
     }
 
     .team-container-title {
-        font-size: clamp(0.65rem, 0.5rem + 1vw, 0.9rem);
-        /* was 2vw (this later rule wins) */
+        font-size: 2vw;
     }
 
     .team-container-desc {
-        font-size: clamp(0.6rem, 0.45rem + 0.9vw, 0.8rem);
-        /* was 2vw */
+        font-size: 2vw;
     }
 
     .logo-container {
@@ -790,75 +814,29 @@ img.show-logo {
         width: 80vw;
     }
 
-    .generic-button {
-        font-size: clamp(1rem, 0.8rem + 1.5vw, 1.25rem);
+    .submit-button {
+        font-size: 4vw;
     }
 
-    /* 
+    .contact-button {
+        border: 0.5vw solid black;
+        border-radius: 4vw;
+        font-size: 4vw;
+    }
+
     .contact-container {
         border: 0.4vw solid #81BB4E;
         width: 80vw;
-    } */
-
-    .contact-container {
-        width: 92%;
-        margin: 4vw auto 12vw auto;
-        padding: 16px;
-        border-width: 2px;
-        box-sizing: border-box;
-        font-size: 1rem;
     }
 
-    .contact-form-item,
-    .contact-form-notes {
-        padding: 8px 0;
-        font-size: 1rem;
-    }
-
-    .contact-entry {
-        padding: 12px;
-        font-size: 16px;
-        /* prevents iOS Safari from auto-zooming on focus */
-        box-sizing: border-box;
-        /* keeps 100% width from overflowing the container */
-        min-height: 44px;
-        /* comfortable tap target */
-    }
-
-    textarea.contact-entry {
-        min-height: 120px;
-        resize: vertical;
-    }
-
-    .contact-container input[type="text"] {
-        height: 30px;
-    }
-
-    .contact-container input[type="date"] {
-        height: 30px;
-    }
-
-    .contact-container input[type="email"] {
-        height: 30px;
-    }
-
-    select {
-        width: fit-content;
-        height: 30px;
-    }
-
-    /* Make the submit button full-width and easy to tap */
-    .contact-container button,
-    .contact-container input[type="submit"] {
-        width: 100%;
-        padding: 14px;
-        font-size: 1rem;
-        min-height: 44px;
+    .rentals-button {
+        border: 0.5vw solid black;
+        border-radius: 4vw;
+        font-size: 4vw;
     }
 
     .footer-credits {
-        font-size: clamp(0.7rem, 0.55rem + 1vw, 0.9rem);
-        /* was 2.8vw */
+        font-size: 2.8vw;
         /* margin-top: 2vw; */
     }
 }

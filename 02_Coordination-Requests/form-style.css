@@ -2,46 +2,48 @@
     --fcg-green: #81bb4e;
 }
 
-@font-face { /* https://github.com/garrettboatman/ForTheWolf/blob/master/fonts/Futura-Medium.woff */
+@font-face {
+    /* https://github.com/garrettboatman/ForTheWolf/blob/master/fonts/Futura-Medium.woff */
     font-family: Futura;
     src: url('/Site Files/Fonts/Futura-Medium.woff') format("WOFF");
     font-weight: normal;
 }
-  
-@font-face { 
+
+@font-face {
     font-family: Futura-Book;
     src: url('/Site Files/Fonts/Futura-Book.woff') format("WOFF");
     font-weight: normal;
 }
 
-@font-face { 
+@font-face {
     font-family: Futura-Medium;
     src: url('/Site Files/Fonts/Futura-Medium.woff') format("WOFF");
     font-weight: normal;
 }
 
-@font-face { 
-    font-family: Futura-Bold;
-    src: url('/Site Files/Fonts/Futura-Bold.ttf') format("TFF");
-    font-weight: normal;
-}
-
-@font-face { 
+@font-face {
     font-family: Consolas;
     src: url('/Site Files/Fonts/Consolas.woff') format("WOFF");
     font-weight: normal;
 }
 
-/* UTILITIES */
+
+/* -------------------- UTILITIES -------------------- */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
 main {
-    /* border-style: dotted; */
-    margin-bottom: 100px;
+    flex: 1;
 }
 
 a {
@@ -52,7 +54,32 @@ li {
     list-style: none;
 }
 
-/* NAVBAR STYLING */
+footer {
+    margin-top: 4em;
+    padding-top: 0.625em;
+    padding-bottom: 1em;
+    width: 100%;
+    text-align: center;
+    background-color: white;
+}
+
+/* -------------------- -------------------- -------------------- */
+
+
+/* -------------------- LOGO -------------------- */
+.logo {
+    cursor: pointer;
+    margin-left: 25px;
+}
+
+img.company-logo {
+    width: 250px;
+}
+
+/* -------------------- -------------------- -------------------- */
+
+
+/* -------------------- NAVBAR STYLING -------------------- */
 .navbar {
     /* border-style: dotted; */
     display: flex;
@@ -69,21 +96,12 @@ li {
     color: black;
 }
 
-/* LOGO */
-.logo {
-    cursor: pointer;
-    margin-left: 25px;
-}
-
-img.company-logo {
-    width: 250px;
-}
-
-/* -------------------- NAVBAR MENU -------------------- */
+/*  NAVBAR MENU  */
 .menu {
     display: flex;
     gap: 1em;
-    font-size: 18px;
+    font-size: 1.125rem;
+    /* was 18px */
     margin-right: 50px;
 }
 
@@ -101,14 +119,15 @@ img.company-logo {
     padding: 6.5px 14px;
 }
 
-/* -------------------- COORDINATION REQUESTS - DROPDOWN MENU -------------------- */
+/* DROPDOWN MENUS */
+.about-dropdown,
 .rf-requests {
     /* border-style: dotted; */
     position: relative;
+    display: inline-block;
 }
 
 .dropdown {
-    /* border-style: dotted; */
     background-color: #dbdbdb;
     padding: 0 0;
     position: absolute;
@@ -117,92 +136,67 @@ img.company-logo {
     border-top-right-radius: 5px;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
-    top: 2.04em;
+    top: 100%;
 }
 
 .dropdown li a+li {
-    /* border-style: dotted; */
     margin-top: 0px;
 }
 
 .dropdown li {
-    /* border-style: dotted; */
-    /* padding: 0.5em; */
     width: 18em;
     text-align: center;
 }
 
+.dropdown li a {
+    display: block;
+    width: 100%;
+    padding: 0em 0.5em;
+    /* moves the padding from the li to the link */
+    box-sizing: border-box;
+}
+
 .dropdown li:hover {
-    /* border-style: dotted; */
     background-color: var(--fcg-green);
 }
 
-.dropdown-menu:hover .dropdown {
-    /* transition-delay: 1s; */
-    /* border-style: dotted; */
+.rf-requests:hover .dropdown {
     display: block;
-    background-color: #dbdbdb;
 }
 
-/* -------------------- RESPONSIVE NAVBAR -------------------- */
+.about-dropdown:hover .dropdown {
+    display: block;
+}
+
+/*  RESPONSIVE NAVBAR  */
 .hack {
     /* input */
     display: none
 }
 
-/* -------------------- HAMBURGER MENU -------------------- */
+/*  HAMBURGER MENU  */
 .hamburger {
     background-color: white;
     display: none;
-    font-size: 24px;
+    font-size: 1.5rem;
+    /* was 24px */
     user-select: none;
     cursor: pointer;
     margin-right: 100px;
 }
 
-/* MEDIA QUERIES */
-@media (max-width: 1075px) {
-    .menu {
-        display: none;
-        position: absolute;
-        background-color: white;
-        right: 0;
-        left: 0;
-        text-align: center;
-        padding: 16px 0;
-        margin-top: 50px;
-        width: 100%;
-    }
+/* -------------------- -------------------- -------------------- */
 
-    .menu li:hover {
-        cursor: pointer;
-        display: inline-block;
-        background-color: var(--fcg-green);
-        transition: 0.3s ease;
-    }
 
-    .hack:checked ~ .menu {
-        display: block;
-    }
-
-    .hamburger {
-        display: block;
-    }
-
-    .dropdown {
-        /* left: 50%; */
-        top: 34px;
-        /* transform: translateX(10%); */
-    }
-
-    .dropdown li:hover {
-        background-color: var(--fcg-green);
-    }
+/* -------------------- DEFAULT STYLINGS -------------------- */
+.page-section {
+    /* border-style: dotted; */
+    text-align: center;
+    width: fit-content;
+    margin: 10px auto auto auto
 }
 
-
-/* PAGE DEFAULT */
-.page-header{
+.page-header {
     /* border-style: dotted; */
     /* border-radius: 20px; */
     text-align: center;
@@ -210,219 +204,165 @@ img.company-logo {
     margin: 20px auto 10px auto;
 }
 
-#page-title {
+.page-title {
     /* border-style: dotted; */
     /* font-family: Georgia, 'Times New Roman', Times, serif; */
     font-family: Consolas;
     width: fit-content;
-    font-size: 4.5vw;
+    font-size: clamp(1.75rem, 1rem + 2.5vw, 3.5rem);
+    /* was 4vw */
     margin: 30px auto auto auto;
     padding: 20px;
 }
 
-#page-subtitle {
+.page-subtitle-green {
     /* border-style: dotted; */
     width: fit-content;
     margin: 10px auto auto auto;
     padding: 20px;
-    font-family: Futura-Book;
-    color: #81BB4E;
-    font-size: 4vw;
+    font-family: Futura-Medium;
+    color: var(--fcg-green);
+    font-size: clamp(1.1rem, 0.8rem + 1.2vw, 2rem);
+    /* was 2vw */
 }
 
-#page-desc {
+.page-subtitle-black {
+    /* border-style: dotted; */
+    width: fit-content;
+    margin: 10px auto auto auto;
+    padding: 20px;
+    font-family: Futura-Medium;
+    color: #000000;
+    font-size: clamp(1.1rem, 0.8rem + 1.2vw, 2rem);
+    /* was 2vw */
+}
+
+.page-text {
     /* border-style: dotted; */
     /* font-family: Georgia, 'Times New Roman', Times, serif; */
-    width: 100%;
+    width: 65vw;
     margin: 10px auto auto auto;
     padding: 20px;
     font-family: Consolas;
-    font-size: 1.5vw;
+    font-size: clamp(1rem, 0.8rem + 0.7vw, 1.4rem);
+    /* was 1.5vw */
     word-wrap: break-word;
 }
 
+.page-desc {
+    /* border-style: dotted; */
+    /* font-family: Georgia, 'Times New Roman', Times, serif; */
+    width: 65vw;
+    margin: 10px auto auto auto;
+    padding: 20px;
+    font-family: Consolas;
+    font-size: clamp(1rem, 0.8rem + 0.7vw, 1.4rem);
+    /* was 1.5vw */
+    word-wrap: break-word;
+}
 
-/* CONTACT BUTTON */
-.contact-button {
+hr.dashed-line {
+    border: none;
+    border-top: 2px dashed #000;
+}
+
+.generic-button {
     background-color: var(--fcg-green);
-    border: 0.25vw solid black;
-    border-radius: 2vw;
+    border: 0.118em solid black;
+    border-radius: 1em;
     color: black;
-    padding: 1vw 2vw 1vw 2vw;
+    padding: 0.4em 0.8em 0.25em 0.8em;
     text-align: center;
     text-decoration: none;
     font-family: Futura-Book;
-    font-size: 2vw;
+    font-size: clamp(1rem, 0.7rem + 1vw, 1.75rem);
+    /* was 2vw */
     cursor: pointer;
-    margin: 35px auto 100px auto;
+    margin: 2vw auto 2vw auto;
+    transition: background-color 0.3s ease, border-color 0.3s ease,
+        color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.contact-button:hover {
-    box-shadow: 0 5px 16px 0 rgba(173, 173, 173, 0.24),0 17px 25px 0 rgba(173, 173, 173, 0.24);
+.generic-button:hover {
+    box-shadow: 0 0.3em 1em 0 rgba(173, 173, 173, 0.24),
+        0 1.05em 1.55em 0 rgba(173, 173, 173, 0.24);
     transition: all 0.3s ease 0s;
-    border: 0.25vw solid #81BB4E;
-    border-radius: 2vw;
+    border-color: #81BB4E;
     background-color: #81BB4E;
     color: white;
 }
 
+/* -------------------- -------------------- -------------------- */
 
-/* FOOTER */
-footer {
+
+/* -------------------- ABOUT -------------------- */
+/*  MEET THE TEAM  */
+.team-container {
     /* border-style: dotted; */
-    /* position: absolute; */
-    bottom: 0;
-    padding: 10px 0 10px 0;
-    margin-bottom: 20px;
-    bottom: 0;
-    width: 100%;
-    text-align: center;
-    background-color: white;
-    border-top: 1px solid black;
+    /* width: 80%; */
+    display: grid;
+    grid-template-columns: 20vw 20vw 20vw;
+    grid-template-rows: 28vw 28vw 28vw;
+    margin: 2vw auto 14vw auto;
+    gap: 4vw;
 }
 
-.footer-credits {
+.team-container-item {
+    border-style: dashed;
+    border-width: 2px;
+    background-color: #f0f0f0;
+    position: relative;
+    padding: 0;
+    /* width: 70%; */
+    /* border: 1px solid #ccc;     */
+    text-align: center;
+}
+
+.team-container-image {
+    border-style: dashed;
+    border-width: 2px;
+    /* height: 4%; */
+    width: 70%;
+    justify-content: center;
+    margin: 2.6vw auto auto auto;
+}
+
+.team-container-text {
+    /* border-style: dashed;
+    border-width: 2px; */
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    margin: 0 auto 1vw auto;
+}
+
+.team-container-title {
+    /* border-style: dotted; */
+    /* margin: 0 auto 0 auto; */
+    /* padding: 0.2vw; */
+    font-family: Futura-Medium;
+    font-size: clamp(0.9rem, 0.6rem + 0.8vw, 1.4rem);
+    /* was 1.5vw */
+    word-wrap: break-word;
+}
+
+.team-container-desc {
+    /* border-style: dotted; */
+    /* position: absolute;
+    bottom: 0; */
+    /* margin: 0 auto 0 auto; */
+    /* padding: 0.2vw; */
     font-family: Consolas;
-    font-size: 1.5vw;
-    margin-top: 2vw;
+    font-size: clamp(0.75rem, 0.5rem + 0.6vw, 1.1rem);
+    /* was 1.2vw */
+    word-wrap: break-word;
 }
 
-#copyright {
-    color: black;
-    text-decoration: none;
-}
-
-/* SOCIAL LINKS & ICONS */
-.social-links {
-    /* border-style: dotted; */
-    position: static;
-    padding: 10px 10px 0px 10px;
-    /* margin-top: 10px; */
-    margin-bottom: 10px;
-    bottom: 0;
-    text-align: center;
-}
-
-.social-icon {
-    width: 1vw;
-    padding: 10px;
-    text-decoration: none;
-}
+/* -------------------- -------------------- -------------------- */
 
 
-/* -------------------------------------------------------------------------------------------- */
-
-
-/* RF FORM */
-.rf-form {
-    /* border-style: dotted; */
-    border-radius: 1vw;
-    width: 85vw;
-    margin: 2vw auto 2vw auto;
-    /* padding: 2vw 3vw 2vw 3vw; */
-}
-
-.form-header {
-    border: 0.2vw solid #81BB4E;
-    border-radius: 1vw;
-    text-align: center;
-    background: #81bb4e20;
-    /* width: 1200px; */
-    width: 60vw;
-    margin: 2vw auto 2vw auto;
-    padding: 1vw;
-    /* font-family: Arial, Helvetica, sans-serif; */
-    font-family: Futura-Book;
-}
-
-.form-title {
-    font-size: 3.5vw;
-}
-
-.show-logo {
-    width: 46vw;
-    padding: 20px 0px 45px 0px;
-}
-
-.form-show {
-    /* font-size: 45px; */
-    font-size: 3vw;
-    color: #81BB4E;
-}
-
-.form-description {
-    font-size: 1.5vw;
-}
-
-.required-field::before{
-    content: "* ";
-    color: red;
-}
-
-.form-section {
-    border: 0.2vw solid #81BB4E;
-    border-radius: 1vw;
-    background: #81bb4e20;
-    width: 60vw;
-    margin: 2vw auto 2vw auto;
-    padding: 2vw 3vw 2vw 3vw;
-    font-family: Futura-Book;
-}
-
-.form-section-title {
-    /* font-size: 20px; */
-    /* margin-bottom: 10px; */
-    margin-bottom: 0.75vw;
-    text-decoration: underline;
-    font-size: 1.8vw;
-}
-
-.form-section-text {
-    /* border-style: dotted; */
-    /* font-size: 18px; */
-    font-size: 4vw;
-}
-
-.form-text {
-    /* border-style: dotted; */
-    /* font-size: 18px; */
-    font-size: 1.4vw;
-}
-
-.form-item {
-    /* border-style: dotted; */
-    /* padding: 10px 10px 10px 10px; */
-    /* font-size: 18px; */
-    padding: 0.5vw 1vw 0.5vw 1vw;
-    font-family: Futura-Medium;
-    font-size: 1.4vw;
-}
-
-.form-notes {
-    /* border-style: dotted; */
-    padding: 0.5vw 1vw 0.5vw 1vw;
-    font-family: Futura-Medium;
-    font-size: 1.4vw;
-    overflow-wrap: break-word;
-}
-
-.form-question {
-    /* border-style: dotted; */
-    width: 100%;
-    /* margin: 15px auto 20px 100px; */
-    /* font-size: 18px; */
-    margin: 1vw auto 2vw 4vw;
-    font-size: 1.5vw;
-}
-
-.form-subsection {
-    /* border-style: dotted; */
-    width: fit-content;
-    margin: 20px auto auto auto;
-    text-align: left;
-}
-
-input[type=text]{
+/* -------------------- FORMS -------------------- */
+input[type=text] {
     width: 100%;
     height: 2vw;
     /* padding: 12px 20px;
@@ -435,10 +375,11 @@ input[type=text]{
     box-sizing: border-box;
     /* font-size: 18px; */
     font-family: Futura-Book;
-    font-size: 1.3vw;
+    font-size: clamp(0.85rem, 0.6rem + 0.6vw, 1.2rem);
+    /* was 1.3vw */
 }
 
-input[type=email]{
+input[type=email] {
     width: 100%;
     height: 2vw;
     /* padding: 12px 20px;
@@ -451,107 +392,38 @@ input[type=email]{
     box-sizing: border-box;
     /* font-size: 18px; */
     font-family: Futura-Book;
-    font-size: 1.3vw;
+    font-size: clamp(0.85rem, 0.6rem + 0.6vw, 1.2rem);
+    /* was 1.3vw */
 }
 
-/* RADIOS */
-.radio-form-section {
-    border: 0.2vw solid #81BB4E;
-    border-radius: 1vw;
-    background: #81bb4e20;
-    /* width: 800px; */
-    /* margin: 20px auto 20px auto;
-    padding: 25px 50px 25px 50px; */
-    width: 60vw;
-    margin: 2vw auto 2vw auto;
-    padding: 2vw 3vw 2vw 3vw;
+input[type=date] {
+    height: 2vw;
+    /* padding: 12px 20px;
+    margin: 8px 0; */
+    padding: 1.5vw 1vw;
+    margin: 0.5vw 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    /* font-size: 18px; */
     font-family: Futura-Book;
-}
-
-.radio-warning {
-    text-align: center;
-    font-size: 1.5vw;
-    color: red;
-}
-
-#radio-popup{
-    padding: 0.5vw;
-}
-
-#radio-notice{
-    border-style: solid;
-    border-radius: 1vw;
-    background: #fff;
-    text-align: center;
-    padding: 1.5vw;
-    margin: 0 0 2vw 0;
-    font-size: 1.3vw;
-    }
-
-textarea {
-  width: 100%;
-  max-width: 100%;
-  /* max-height: 2%; */
-  box-sizing: border-box;
-  border: 2px solid #ccc;
-  border-radius: 5px;
-  background-color: #f8f8f8;
-  padding: 12px 20px;
-  /* font-size: 18px; */
-  font-family: Futura-Book;
-  font-size: 1.3vw;
-}
-
-input[type=file] {
-  font-size: 18px;
+    font-size: clamp(0.85rem, 0.6rem + 0.6vw, 1.2rem);
+    /* was 1.3vw */
 }
 
 select {
-  color: gray; 
-  font-size: 1.5vw;
-  display: block;
-  width: 100%;
-  margin: 10px auto auto auto;
+    /* border-style: dotted; */
+    width: 15vw;
+    height: 2.5vw;
+    margin: 0vw 0vw 0vw 0vw;
+    padding: 5px 0;
+    font-family: Futura-Book;
+    font-size: clamp(0.85rem, 0.6rem + 0.6vw, 1.2rem);
+    /* was 1.3vw */
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
-
-input[type=checkbox] {
-  /* font-size: 18px; */
-  font-size: 1.3vw;
-  width: 1.3vw;
-  height: 1.3vw;
-  margin: auto;
-}
-
-
-/* HIDDEN ELEMENTS FOR GOOGLE SHEETS FORM */
-#hidden-date {
-  display: none;
-}
-
-#hidden-loc {
-  display: none;
-}
-
-#hidden-radios {
-  display: none;
-}
-
-#hidden-range {
-  display: none;
-}
-
-#hidden-comments {
-  display: none;
-}
-
-
-/* https://www.w3schools.com/howto/howto_css_custom_checkbox.asp */
-/* CUSTOM CHECKBOX */
-.checkbox-group {
-    margin-top: 1vw;
-}
-
-
 
 .checkbox-container {
     /* border-style: dotted; */
@@ -563,56 +435,57 @@ input[type=checkbox] {
     /* padding-left: 2.75vw; */
     cursor: pointer;
     font-family: Futura-Book;
-    font-size: 1.3vw;
+    font-size: clamp(0.85rem, 0.6rem + 0.6vw, 1.2rem);
+    /* was 1.3vw */
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-  }
-  
-  /* Hide the browser's default checkbox */
-  .checkbox-container input {
+}
+
+/* Hide the browser's default checkbox */
+.checkbox-container input {
     position: absolute;
     opacity: 0;
     cursor: pointer;
     height: 0;
     width: 0;
-  }
-  
-  /* Create a custom checkbox */
-  .checkmark {
+}
+
+/* Create a custom checkbox */
+.checkmark {
     position: absolute;
     top: 0;
     left: 0;
     height: 1.7vw;
     width: 1.7vw;
     background-color: #c3c3c3;
-  }
-  
-  /* On mouse-over, add a grey background color */
-  .checkbox-container:hover input ~ .checkmark {
+}
+
+/* On mouse-over, add a grey background color */
+.checkbox-container:hover input~.checkmark {
     background-color: #ccc;
-  }
-  
-  /* When the checkbox is checked, add a blue background */
-  .checkbox-container input:checked ~ .checkmark {
+}
+
+/* When the checkbox is checked, add a blue background */
+.checkbox-container input:checked~.checkmark {
     background-color: var(--fcg-green);
-  }
-  
-  /* Create the checkmark/indicator (hidden when not checked) */
-  .checkmark:after {
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
     content: "";
     position: absolute;
     display: none;
-  }
-  
-  /* Show the checkmark when checked */
-.checkbox-container input:checked ~ .checkmark:after {
+}
+
+/* Show the checkmark when checked */
+.checkbox-container input:checked~.checkmark:after {
     display: block;
-  }
-  
-  /* Style the checkmark/indicator */
-  .checkbox-container .checkmark:after {
+}
+
+/* Style the checkmark/indicator */
+.checkbox-container .checkmark:after {
     left: 0.6vw;
     top: 0.25vw;
     width: 0.3vw;
@@ -622,8 +495,7 @@ input[type=checkbox] {
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
-  }
-
+}
 
 /* https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_custom_radio ---------------------------- */
 /* CUSTOM RADIO BUTTON */
@@ -635,7 +507,8 @@ input[type=checkbox] {
     margin-bottom: 1vw;
     cursor: pointer;
     font-family: Futura-Book;
-    font-size: 1.3vw;
+    font-size: clamp(0.85rem, 0.6rem + 0.6vw, 1.2rem);
+    /* was 1.3vw */
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
@@ -661,12 +534,12 @@ input[type=checkbox] {
 }
 
 /* On mouse-over, add a grey background color */
-.radio-container:hover input ~ .radio-mark {
+.radio-container:hover input~.radio-mark {
     background-color: #ccc;
 }
 
 /* When the radio button is checked, add a blue background */
-.radio-container input:checked ~ .radio-mark {
+.radio-container input:checked~.radio-mark {
     background-color: #81BA4D;
 }
 
@@ -678,7 +551,7 @@ input[type=checkbox] {
 }
 
 /* Show the indicator (dot/circle) when checked */
-.radio-container input:checked ~ .radio-mark:after {
+.radio-container input:checked~.radio-mark:after {
     display: block;
 }
 
@@ -691,7 +564,200 @@ input[type=checkbox] {
     border-radius: 50%;
     background: white;
 }
+
 /* https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_custom_radio ^^^^^^^^^^^^^^^^^^^^^^^^^^^^  */
+
+/*  RF FORMS  */
+.rf-form {
+    border-radius: 1vw;
+    width: 85vw;
+    margin: 2vw auto 2vw auto;
+}
+
+.form-header {
+    border: 0.2vw solid #81BB4E;
+    border-radius: 1vw;
+    text-align: center;
+    background: #81bb4e20;
+    /* width: 1200px; */
+    width: 60vw;
+    margin: 2vw auto 2vw auto;
+    padding: 1vw 1em;
+    /* font-family: Arial, Helvetica, sans-serif; */
+    font-family: Futura-Book;
+}
+
+.form-title {
+    font-size: clamp(1.5rem, 0.9rem + 2vw, 3rem);
+    /* was 3.5vw */
+}
+
+.show-logo {
+    width: 100%;
+    max-width: 40rem;
+    height: auto;
+    padding: 20px 0px 45px 0px;
+}
+
+.form-show {
+    /* font-size: 45px; */
+    font-size: clamp(1.4rem, 0.8rem + 1.8vw, 2.6rem);
+    /* was 3vw */
+    color: #81BB4E;
+}
+
+.form-description {
+    font-size: clamp(1rem, 0.8rem + 0.7vw, 1.4rem);
+    /* was 1.5vw */
+}
+
+.required-field::before {
+    content: "* ";
+    color: red;
+}
+
+.form-section {
+    border: 0.2vw solid #81BB4E;
+    border-radius: 1vw;
+    background: #81bb4e20;
+    width: 60vw;
+    margin: 2vw auto 2vw auto;
+    padding: 2vw 3vw 2vw 3vw;
+    font-family: Futura-Book;
+}
+
+.form-section-title {
+    /* font-size: 20px; */
+    /* margin-bottom: 10px; */
+    margin-bottom: 0.75vw;
+    text-decoration: underline;
+    font-size: clamp(1.05rem, 0.75rem + 0.9vw, 1.6rem);
+    /* was 1.8vw */
+}
+
+.form-section-text {
+    /* border-style: dotted; */
+    /* font-size: 18px; */
+    font-size: clamp(1.5rem, 0.9rem + 2.5vw, 3.25rem);
+    /* was 4vw */
+}
+
+.form-text {
+    /* border-style: dotted; */
+    /* font-size: 18px; */
+    font-size: clamp(0.9rem, 0.6rem + 0.7vw, 1.3rem);
+    /* was 1.4vw */
+}
+
+.form-item {
+    /* border-style: dotted; */
+    /* padding: 10px 10px 10px 10px; */
+    /* font-size: 18px; */
+    padding: 0.5vw 1vw 0.5vw 1vw;
+    font-family: Futura-Medium;
+    font-size: clamp(0.9rem, 0.6rem + 0.7vw, 1.3rem);
+    /* was 1.4vw */
+}
+
+.form-notes {
+    /* border-style: dotted; */
+    padding: 0.5vw 1vw 0.5vw 1vw;
+    font-family: Futura-Medium;
+    font-size: clamp(0.9rem, 0.6rem + 0.7vw, 1.3rem);
+    /* was 1.4vw */
+    overflow-wrap: break-word;
+}
+
+.form-question {
+    /* border-style: dotted; */
+    width: 100%;
+    /* margin: 15px auto 20px 100px; */
+    /* font-size: 18px; */
+    margin: 1vw auto 2vw 4vw;
+    font-size: clamp(1rem, 0.8rem + 0.7vw, 1.4rem);
+    /* was 1.5vw */
+}
+
+.form-subsection {
+    /* border-style: dotted; */
+    width: fit-content;
+    margin: 20px auto auto auto;
+    text-align: left;
+}
+
+/* RF FORM -- RADIOS */
+.radio-form-section {
+    border: 0.2vw solid #81BB4E;
+    border-radius: 1vw;
+    background: #81bb4e20;
+    /* width: 800px; */
+    /* margin: 20px auto 20px auto;
+    padding: 25px 50px 25px 50px; */
+    width: 60vw;
+    margin: 2vw auto 2vw auto;
+    padding: 2vw 3vw 2vw 3vw;
+    font-family: Futura-Book;
+}
+
+.radio-warning {
+    text-align: center;
+    font-size: clamp(1rem, 0.8rem + 0.7vw, 1.4rem);
+    /* was 1.5vw */
+    color: red;
+}
+
+#radio-popup {
+    padding: 0.5vw;
+}
+
+#radio-notice {
+    border-style: solid;
+    border-radius: 1vw;
+    background: #fff;
+    text-align: center;
+    padding: 1.5vw;
+    margin: 0 0 2vw 0;
+    font-size: clamp(0.85rem, 0.6rem + 0.6vw, 1.2rem);
+    /* was 1.3vw */
+}
+
+textarea {
+    width: 100%;
+    max-width: 100%;
+    /* max-height: 2%; */
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    background-color: #f8f8f8;
+    padding: 12px 20px;
+    /* font-size: 18px; */
+    font-family: Futura-Book;
+    font-size: clamp(0.85rem, 0.6rem + 0.6vw, 1.2rem);
+    /* was 1.3vw */
+}
+
+input[type=file] {
+    font-size: 1.125rem;
+    /* was 18px */
+}
+
+select {
+    color: gray;
+    font-size: clamp(1rem, 0.8rem + 0.7vw, 1.4rem);
+    /* was 1.5vw */
+    display: block;
+    width: 100%;
+    margin: 10px auto auto auto;
+}
+
+input[type=checkbox] {
+    /* font-size: 18px; */
+    font-size: clamp(0.85rem, 0.6rem + 0.6vw, 1.2rem);
+    /* was 1.3vw */
+    width: 1.3vw;
+    height: 1.3vw;
+    margin: auto;
+}
 
 /* WIRELESS DEVICES */
 .device-example {
@@ -734,16 +800,20 @@ select {
     height: 2.5vw;
     margin: 0vw 0vw 0vw 0vw;
     font-family: Futura-Book;
-    font-size: 1.3vw;
+    font-size: clamp(0.85rem, 0.6rem + 0.6vw, 1.2rem);
+    /* was 1.3vw */
 }
 
-table, th, td {
+table,
+th,
+td {
     /* border: 1px solid black; */
     /* font-size: 18px; */
     margin: auto;
     /* padding: 0px 10px 0px 10px; */
     padding: 0 0.5vw 0 0.5vw;
-    font-size: 1.3vw;
+    font-size: clamp(0.85rem, 0.6rem + 0.6vw, 1.2rem);
+    /* was 1.3vw */
     justify-content: center;
 }
 
@@ -769,7 +839,8 @@ thead {
     /* border-style: dotted; */
     text-align: center;
     justify-content: right;
-    background-color: #81BB4E; /* Green */
+    background-color: #81BB4E;
+    /* Green */
     border: none;
     border-radius: 25%;
     height: 2vw;
@@ -778,7 +849,8 @@ thead {
     padding: 2vw;
     text-align: center;
     text-decoration: none;
-    font-size: 1.5vw;
+    font-size: clamp(1rem, 0.8rem + 0.7vw, 1.4rem);
+    /* was 1.5vw */
     margin: 1vw 0.5vw 2vw 0.5vw;
     padding: 0.25vw 0.5vw 0.25vw 0.5vw;
     cursor: pointer;
@@ -789,9 +861,10 @@ thead {
     position: relative;
     display: inline-block;
     margin-left: 2vw;
-    font-size: 2vw;
+    font-size: clamp(1rem, 0.7rem + 1vw, 1.75rem);
+    /* was 2vw */
     /* border-bottom: 1px dotted black; */
-  }
+}
 
 .tooltip .tooltiptext {
     visibility: hidden;
@@ -800,14 +873,15 @@ thead {
     color: #fff;
     text-align: left;
     border-radius: 6px;
-    font-size: 1.3vw;
+    font-size: clamp(0.85rem, 0.6rem + 0.6vw, 1.2rem);
+    /* was 1.3vw */
     padding: 14px 0px 14px 14px;
 
-/* Position the tooltip */
+    /* Position the tooltip */
     position: absolute;
     z-index: 1;
 }
-  
+
 /* .tooltip:hover .tooltiptext {
     visibility: visible;
 } */
@@ -835,29 +909,123 @@ thead {
     /* font-family: Arial, Helvetica, sans-serif; */
 }
 
-.submit-button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.center {
+    display: block;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.submit-warning {
+    font-family: Consolas;
+    color: red;
+    text-align: center;
+    font-size: clamp(0.75rem, 0.55rem + 0.5vw, 1rem);
+    /* was 1vw */
+
+}
+
+/*  COORDINATION REQUESTS - LOGO CONTAINER  */
+.logo-container {
+    border-style: dotted;
+    border-radius: 2vw;
+    /* width: 100vw; */
+    text-align: center;
+    width: fit-content;
+    margin: 1vw auto 0.5vw auto;
+    padding: 2vw;
+}
+
+/* HIDDEN ELEMENTS FOR GOOGLE SHEETS FORM */
+#hidden-date {
+    display: none;
+}
+
+#hidden-loc {
+    display: none;
+}
+
+#hidden-radios {
+    display: none;
+}
+
+#hidden-range {
+    display: none;
+}
+
+#hidden-comments {
+    display: none;
+}
+
+/* https://www.w3schools.com/howto/howto_css_custom_checkbox.asp */
+/* CUSTOM CHECKBOX */
+.checkbox-group {
+    margin-top: 1vw;
+}
+
+/*  CONTACT FORM  */
+.contact-container {
+    margin: 2vw auto 10vw auto;
+    width: 50%;
+    border: 0.25vw solid #81BB4E;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+    font-family: Futura-Book;
+    font-size: clamp(0.9rem, 0.6rem + 0.7vw, 1.3rem);
+    /* was 1.4vw */
+}
+
+.required-field::before {
+    content: "* ";
+    color: red;
+}
+
+.contact-form-item {
+    padding: 0.5vw 1vw 0.5vw 1vw;
+    font-family: Futura-Medium;
+    font-size: clamp(0.9rem, 0.6rem + 0.7vw, 1.3rem);
+    /* was 1.4vw */
+}
+
+.contact-form-notes {
+    /* border-style: dotted; */
+    padding: 0.5vw 1vw 0.5vw 1vw;
+    font-family: Futura-Medium;
+    font-size: clamp(0.9rem, 0.6rem + 0.7vw, 1.3rem);
+    /* was 1.4vw */
+    overflow-wrap: break-word;
+}
+
+.contact-entry {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* -------------------- -------------------- -------------------- */
 
 
+/*  RENTALS / INVENTORY  */
+.rentals-button {
     background-color: var(--fcg-green);
     border: 0.25vw solid black;
     border-radius: 2vw;
     color: black;
-    padding: 0.8vw 2vw 0.4vw 2vw;
+    padding: 0.8vw 1vw 0.5vw 1vw;
     text-align: center;
     text-decoration: none;
     font-family: Futura-Book;
-    font-size: 2vw;
+    font-size: clamp(1rem, 0.7rem + 1vw, 1.75rem);
+    /* was 2vw */
     cursor: pointer;
-    margin: 35px auto 30px auto;
+    margin: 2vw auto 2vw auto;
 }
 
-.submit-button:hover {
-    /* box-shadow: 0 5px 16px 0 rgba(0,0,0,0.24),0 17px 25px 0 rgba(0,0,0,0.19); */
-
-    box-shadow: 0 5px 16px 0 rgba(173, 173, 173, 0.24),0 17px 25px 0 rgba(173, 173, 173, 0.24);
+.rentals-button:hover {
+    box-shadow: 0 5px 16px 0 rgba(173, 173, 173, 0.24), 0 17px 25px 0 rgba(173, 173, 173, 0.24);
     transition: all 0.3s ease 0s;
     border: 0.25vw solid #81BB4E;
     border-radius: 2vw;
@@ -865,31 +1033,186 @@ thead {
     color: white;
 }
 
-
-/* .center {
-    /* display: flex;
-    justify-content: center;
-    align-items: center;
-    /* height: 75px;
-    font-size: 45px;
-    padding: 10px 25px 10px 25px;
-    margin-top: 50px;
-    margin-bottom: 100px;
-    height: 4.5vw;
-    font-size: 3vw;
-    padding: 1vw;
-    margin-top: 4vw;
-    margin-bottom: 6vw;
-} */
-
-.submit-warning {
-    font-family: Consolas;
-    color: red;
-    text-align: center;
-    font-size: 1vw;
-
+.inventory-wrapper {
+    /* Centers the entire grid container on the page */
+    max-width: 940px;
+    /* Set a max-width for the grid */
+    margin: 0 auto;
+    /* Centers the block horizontally */
+    padding: 1rem;
 }
 
+.inventory-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.inventory-main-item {
+    background-color: #81bb4e75;
+    padding: 3vw;
+    border: dotted;
+    border-radius: 0.8vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: Consolas;
+    font-weight: bolder;
+    font-size: clamp(0.8rem, 0.5rem + 0.7vw, 1.3rem);
+    /* was 1.4vw */
+    cursor: crosshair;
+}
+
+.inventory-hoverbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 10px 14px;
+    background: #ffffff;
+    color: #222;
+    border-radius: 6px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, .25);
+    font-family: Futura-Book;
+    font-size: .9em;
+    white-space: pre-line;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity .15s;
+    z-index: 10;
+}
+
+.inventory-hoverbox.visible {
+    opacity: 1;
+}
+
+.item {
+    position: relative;
+    display: inline-block;
+    background-color: #b8b8b875;
+    cursor: pointer;
+    padding: 2vw;
+    border: dotted;
+    border-radius: 0.8vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: Consolas;
+    font-size: clamp(0.75rem, 0.5rem + 0.6vw, 1.1rem);
+    /* was 1.2vw */
+}
+
+.item-popup {
+    visibility: hidden;
+    /* Hides the pop-up by default */
+    width: 220px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    /* Positions the pop-up over other content */
+    z-index: 1;
+    /* Ensures the pop-up appears on top */
+    bottom: 20%;
+    /* Positions the pop-up above the hovered text */
+    left: 50%;
+    margin-left: -60px;
+    /* Centers the pop-up (half of its width) */
+    /* Optional: Add smooth transition effect using opacity */
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+/* Show the pop-up when hovering over the parent container */
+.item:hover .item-popup {
+    visibility: visible;
+    /* Makes the pop-up visible */
+    opacity: 1;
+    /* Makes the pop-up fully opaque (for the fade effect) */
+}
+
+/* -------------------- -------------------- -------------------- */
+
+/* -------------------- // -------------------- */
+/* -------------------- -------------------- -------------------- */
+
+
+/* -------------------- FOOTER -------------------- */
+.footer-credits {
+    font-family: Consolas;
+    font-size: clamp(0.75rem, 0.5rem + 0.5vw, 1.1rem);
+    /* was 1.2vw */
+    margin-top: 2vw;
+}
+
+#copyright {
+    color: black;
+    text-decoration: none;
+}
+
+/* SOCIAL LINKS & ICONS */
+.social-links {
+    /* border-style: dotted; */
+    position: static;
+    padding: 10px 10px 0px 10px;
+    /* margin-top: 10px; */
+    margin-bottom: 10px;
+    bottom: 0;
+    text-align: center;
+}
+
+.social-icon {
+    width: 1vw;
+    padding: 10px;
+    text-decoration: none;
+}
+
+/* -------------------- -------------------- -------------------- */
+
+
+
+/* -------------------- MEDIA QUERIES -------------------- */
+@media (max-width: 1075px) {
+    .menu {
+        display: none;
+        position: absolute;
+        background-color: white;
+        right: 0;
+        left: 0;
+        text-align: center;
+        padding: 16px 0;
+        margin-top: 50px;
+        width: 100%;
+    }
+
+    .menu li:hover {
+        cursor: pointer;
+        display: inline-block;
+        background-color: var(--fcg-green);
+        transition: 0.3s ease;
+    }
+
+    .hack:checked~.menu {
+        display: block;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .dropdown {
+        /* left: 50%; */
+        top: 100%;
+        /* transform: translateX(10%); */
+    }
+
+    .dropdown li:hover {
+        background-color: var(--fcg-green);
+    }
+}
 
 
 /* MOBILE */
@@ -897,32 +1220,102 @@ thead {
     img.company-logo {
         width: 175px;
     }
-    
-    #page-title {
-        font-size: 10vw;
+
+    .menu {
+        display: none;
+        position: absolute;
+        background-color: white;
+        right: 0;
+        left: 0;
+        text-align: center;
+        padding: 16px 0;
+        margin-top: 50px;
+        width: 100%;
     }
 
-    #page-subtitle {
-        font-size: 8vw;
+    .page-title {
+        font-size: clamp(1.5rem, 1.1rem + 2.5vw, 2.25rem);
+        /* was 8vw */
+        text-align: center;
+    }
+
+    .page-subtitle {
+        font-size: clamp(1.1rem, 0.9rem + 2vw, 1.5rem);
+        /* was 6vw */
         text-align: center;
         inline-size: 300px;
         text-wrap: break-word;
     }
 
-    #page-desc {
-        width: 80vw;
-        font-size: 4vw;
+    .page-subtitle-black {
+        font-size: clamp(1.1rem, 0.9rem + 2vw, 1.5rem);
+        /* was 6vw */
+        text-align: center;
+        inline-size: 300px;
+        text-wrap: break-word;
     }
 
-    .contact-button {
-        font-size: 4vw;
+    .page-subtitle-green {
+        font-size: clamp(1.1rem, 0.9rem + 2vw, 1.5rem);
+        /* was 6vw */
+        text-align: center;
+        inline-size: 300px;
+        text-wrap: break-word;
+    }
+
+    .page-text {
+        width: 80vw;
+        font-size: clamp(0.95rem, 0.85rem + 1vw, 1.15rem);
+        /* was 4vw */
+    }
+
+    .page-desc {
+        width: 80vw;
+        font-size: clamp(0.95rem, 0.85rem + 1vw, 1.15rem);
+        /* was 4vw */
+    }
+
+    .team-container-title {
+        font-size: clamp(0.65rem, 0.5rem + 1vw, 0.9rem);
+        /* was 3vw */
+    }
+
+    .team-container-title {
+        font-size: clamp(0.65rem, 0.5rem + 1vw, 0.9rem);
+        /* was 2vw (this later rule wins) */
+    }
+
+    .team-container-desc {
+        font-size: clamp(0.6rem, 0.45rem + 0.9vw, 0.8rem);
+        /* was 2vw */
+    }
+
+    .logo-container {
+        border-style: dotted;
+        border-radius: 2vw;
+        width: 40vw;
+        text-align: center;
+        width: fit-content;
+        margin: 1vw auto 0.5vw auto;
+        padding: 2vw;
+    }
+
+    .generic-button {
+        font-size: clamp(1rem, 0.8rem + 1.5vw, 1.25rem);
+    }
+
+    .contact-container {
+        border: 0.4vw solid #81BB4E;
+        width: 80vw;
     }
 
     .footer-credits {
-        font-size: 2.5vw;
-        margin-top: 2vw;
+        font-size: clamp(0.7rem, 0.55rem + 1vw, 0.9rem);
+        /* was 2.8vw */
+        /* margin-top: 2vw; */
     }
 
+    /* RF FORM */
     .form-header {
         width: 80vw;
     }
@@ -944,55 +1337,63 @@ thead {
     }
 
     .form-title {
-        font-size: 6vw;
-    }
-
-    .show-logo {
-        width: 60vw;
+        font-size: clamp(1.4rem, 1rem + 2.5vw, 2rem);
+        /* was 6vw */
     }
 
     .form-description {
-        font-size: 3vw;
+        font-size: clamp(0.85rem, 0.75rem + 0.8vw, 1rem);
+        /* was 3vw */
     }
 
     .form-section-title {
-        font-size: 3.5vw;
+        font-size: clamp(0.95rem, 0.8rem + 1vw, 1.2rem);
+        /* was 3.5vw */
     }
 
     .form-item {
-        font-size: 3vw;
+        font-size: clamp(0.85rem, 0.75rem + 0.8vw, 1rem);
+        /* was 3vw */
     }
 
     .form-notes {
-        font-size: 2.5vw;
+        font-size: clamp(0.8rem, 0.7rem + 0.7vw, 0.95rem);
+        /* was 2.5vw */
     }
 
     .form-text {
-        font-size: 3vw;
+        font-size: clamp(0.85rem, 0.75rem + 0.8vw, 1rem);
+        /* was 3vw */
     }
 
     .radio-warning {
-        font-size: 3.4vw;
+        font-size: clamp(0.85rem, 0.75rem + 0.9vw, 1.05rem);
+        /* was 3.4vw */
     }
 
     #radio-notice {
-        font-size: 1.3vw;
+        font-size: clamp(0.8rem, 0.7rem + 0.7vw, 0.95rem);
+        /* was 1.3vw (overridden by the later 2.5vw rule) */
     }
 
-    input[type=text]{
+    input[type=text] {
         width: 100%;
         height: 5vw;
-        font-size: 2.5vw;
+        font-size: clamp(0.8rem, 0.7rem + 0.7vw, 0.95rem);
+        /* was 2.5vw */
     }
 
     textarea {
-        font-size: 2.5vw;
-      }
+        font-size: clamp(0.8rem, 0.7rem + 0.7vw, 0.95rem);
+        /* was 2.5vw */
+    }
 
     .checkbox-container {
         padding-left: 5.5vw;
-        font-size: 2.5vw;
+        font-size: clamp(0.8rem, 0.7rem + 0.7vw, 0.95rem);
+        /* was 2.5vw */
     }
+
     .checkmark {
         width: 3vw;
         height: 3vw;
@@ -1007,11 +1408,13 @@ thead {
 
     .radio-container {
         padding-left: 5.5vw;
-        font-size: 2.5vw;
+        font-size: clamp(0.8rem, 0.7rem + 0.7vw, 0.95rem);
+        /* was 2.5vw */
     }
 
     #radio-notice {
-        font-size: 2.5vw;
+        font-size: clamp(0.8rem, 0.7rem + 0.7vw, 0.95rem);
+        /* was 2.5vw */
     }
 
     .radio-mark {
@@ -1027,23 +1430,29 @@ thead {
     }
 
     .wireless-form-section .radio-container {
-        font-size: 2.8vw;
+        font-size: clamp(0.8rem, 0.7rem + 0.8vw, 1rem);
+        /* was 2.8vw */
         padding-top: 0.6vw;
     }
 
-    table, th, td {
-        font-size: 2.5vw;
+    table,
+    th,
+    td {
+        font-size: clamp(0.8rem, 0.7rem + 0.7vw, 0.95rem);
+        /* was 2.5vw */
     }
 
     .table-button {
         height: 4vw;
         width: 4vw;
         padding: 0.2vw 0 2vw 0;
-        font-size: 3vw;
+        font-size: clamp(0.85rem, 0.75rem + 0.8vw, 1rem);
+        /* was 3vw */
     }
 
     .tooltip {
-        font-size: 2.8vw;
+        font-size: clamp(0.8rem, 0.7rem + 0.8vw, 1rem);
+        /* was 2.8vw */
     }
 
     .tooltip .tooltiptext {
@@ -1053,43 +1462,31 @@ thead {
         /* color: #fff; */
         text-align: left;
         border-radius: 6px;
-        font-size: 2.5vw;
+        font-size: clamp(0.8rem, 0.7rem + 0.7vw, 0.95rem);
+        /* was 2.5vw */
         padding: 14px 0px 14px 14px;
     }
 
     select {
         width: 100%;
         height: 5vw;
-        font-size: 2.5vw;
-      }
-
-    .submit-button {
-        border: 0.5vw solid black;
-        border-radius: 4vw;
-        /* padding: 2vw; */
-        /* font-size: 2vw; */
-        cursor: pointer;
-        /* margin: auto; */
-    }
-
-    .center {
-        height: 8vw;
-        font-size: 4vw;
-        padding: 1vw 2vw;
-        margin-top: 4vw;
-        margin-bottom: 6vw;
+        font-size: clamp(0.8rem, 0.7rem + 0.7vw, 0.95rem);
+        /* was 2.5vw */
     }
 
     .submit-warning {
-        font-size: 2.4vw;
+        font-size: clamp(0.7rem, 0.6rem + 0.7vw, 0.9rem);
+        /* was 2.4vw */
     }
-
-
 }
 
-  /* CREDITS / HELP
+/* -------------------------------------------------------------------------------------------- */
+
+
+
+
+/* CREDITS / HELP
 
 Responsive navbar: https://www.makeuseof.com/responsive-navigation-bar-using-html-and-css/ 
-Contact form: /* https://www.w3schools.com/howto/howto_css_contact_form.asp 
 
 */
