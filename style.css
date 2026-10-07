@@ -111,11 +111,13 @@ img.company-logo {
     transition: 0.3s ease;
 }
 
+
 .menu li a:hover {
     color: white;
 }
 
 .menu li {
+    list-style: none;
     padding: 6.5px 14px;
 }
 
